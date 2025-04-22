@@ -9,19 +9,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="Adding Put and Delete methods">
+    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="Minor changes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/controller/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/controller/CategoryController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/model/Category.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" afterDir="false" />
@@ -137,7 +135,7 @@
       <updated>1744894677866</updated>
       <workItem from="1744894679173" duration="1415000" />
       <workItem from="1744896147996" duration="4526000" />
-      <workItem from="1745305350289" duration="2135000" />
+      <workItem from="1745305350289" duration="3123000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -187,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745306896681</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Minor changes">
+      <option name="closed" value="true" />
+      <created>1745307751670</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1745307751670</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +209,7 @@
     <MESSAGE value="Adding Get and Post methods" />
     <MESSAGE value="Enable routing in Program.cs" />
     <MESSAGE value="Adding Put and Delete methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Put and Delete methods" />
+    <MESSAGE value="Minor changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
   </component>
 </project>

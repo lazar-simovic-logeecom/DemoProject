@@ -32,6 +32,7 @@ public class CategoryService
 
         existing.Title = updatedCategory.Title;
         existing.Description = updatedCategory.Description;
+        existing.Code = updatedCategory.Code;
         existing.ParentCategory = updatedCategory.ParentCategory;
 
         return existing;
