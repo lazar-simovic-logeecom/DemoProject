@@ -9,32 +9,40 @@ namespace DemoProject.controller;
 public class CategoryController : ControllerBase
 {
 
-    public readonly CategoryService _categoryService;
+    private readonly CategoryService categoryService;
 
     public CategoryController(CategoryService categoryService)
     {
-        this._categoryService = categoryService;
+        this.categoryService = categoryService;
     }
     
     [HttpPost]
     public IActionResult AddCategory([FromBody] Category category)
     {
-        _categoryService.Create(category);
+        Category existingCategory = categoryService.GetById(category.Id);
+        if (existingCategory != null)
+        {
+            return BadRequest("Category with the same ID already exists.");
+        }
+        categoryService.Create(category);
+        
         return Ok(category);
     }
 
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(_categoryService.GetAll());
+        return Ok(categoryService.GetAll());
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(Guid id)
     {
-        var category = _categoryService.GetById(id);
+        Category category = categoryService.GetById(id);
         if (category == null)
+        {
             return NotFound();
+        }
 
         return Ok(category);
     }
@@ -42,9 +50,17 @@ public class CategoryController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateCategory(Guid id, [FromBody] Category updatedCategory)
     {
-        var result = _categoryService.Update(id, updatedCategory);
+        Category existingCategory = categoryService.GetById(id);
+        if (existingCategory == null)
+        {
+            return NotFound("Category not found.");
+        }
+        
+        Category result = categoryService.Update(id, updatedCategory);
         if (result == null)
+        {
             return NotFound();
+        }
 
         return Ok(result);
     }
@@ -52,9 +68,17 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteCategory(Guid id)
     {
-        bool deleted = _categoryService.Delete(id);
+        Category existingCategory = categoryService.GetById(id);
+        if (existingCategory == null)
+        {
+            return NotFound("Category not found.");
+        }
+        
+        bool deleted = categoryService.Delete(id);
         if (!deleted)
+        {
             return NotFound();
+        }
 
         return NoContent();
     }
