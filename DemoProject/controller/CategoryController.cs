@@ -17,22 +17,26 @@ public class CategoryController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult Create(Category category)
+    public IActionResult AddCategory([FromBody] Category category)
     {
-        categoryService.addCategory(category);
+        categoryService.Create(category);
         return Ok(category);
     }
 
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(categoryService.getAllCategory());
+        return Ok(categoryService.GetAll());
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(Guid id)
     {
-        return Ok(categoryService.getCategoryById(id));
+        var category = categoryService.GetById(id);
+        if (category == null)
+            return NotFound();
+
+        return Ok(category);
     }
 
     [HttpPut("{id}")]

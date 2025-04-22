@@ -31,3 +31,4 @@ C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\refint\Dem
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\DemoProject.pdb
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\DemoProject.genruntimeconfig.cache
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\ref\DemoProject.dll
+C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\DemoProject.sourcelink.json

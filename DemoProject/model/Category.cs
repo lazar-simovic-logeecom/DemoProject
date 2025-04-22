@@ -2,9 +2,18 @@
 
 public class Category
 {
-    private Guid id { get; set; } = new Guid();
-    private String title { get; set; }
-    private String description { get; set; }
-    private Category category { get; set; }
+    
+    public Guid Id { get; set; }
+    public string Title { get; set; }
+    public string Description { get; set; }
+    public Guid? ParentCategory { get; set; }
+
+    public Category(string title, string description, Guid? parentCategory)
+    {
+        Title = title;
+        Description = description;
+        ParentCategory = parentCategory;
+    }
+    
     
 }

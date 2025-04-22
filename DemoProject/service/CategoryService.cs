@@ -7,17 +7,19 @@ public class CategoryService
 
     public static List<Category> listCategory = new List<Category>();
 
-    public List<Category> getAllCategory()
+    public List<Category> GetAll()
     {
         return listCategory;
     }
 
-    public Category getCategoryById(Guid id)
+    public Category GetById(Guid id)
     {
-        return listCategory.FirstOrDefault(x => x.Id == id);
+        var category = listCategory.Find(x => x.Id == id);
+        if (category == null) return null;
+        return category;
     }
 
-    public void addCategory(Category category)
+    public void Create(Category category)
     {
         category.Id = Guid.NewGuid();
         listCategory.Add(category);
