@@ -23,14 +23,25 @@ public class CategoryService
         listCategory.Add(category);
     }
 
-    public void updateCategory(Category category)
+    public Category? Update(Guid id, Category updatedCategory)
     {
-        listCategory.Remove(category);
+        var existing = listCategory.FirstOrDefault(c => c.Id == id);
+        if (existing == null) return null;
+
+        existing.Title = updatedCategory.Title;
+        existing.Description = updatedCategory.Description;
+        existing.ParentCategory = updatedCategory.ParentCategory;
+
+        return existing;
     }
 
-    public void deleteCategory(Category category)
+    public bool Delete(Guid id)
     {
+        var category = listCategory.FirstOrDefault(c => c.Id == id);
+        if (category == null) return false;
+
         listCategory.Remove(category);
+        return true;
     }
     
 }

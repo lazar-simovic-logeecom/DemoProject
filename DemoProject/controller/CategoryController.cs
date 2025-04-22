@@ -35,16 +35,24 @@ public class CategoryController : ControllerBase
         return Ok(categoryService.getCategoryById(id));
     }
 
-    /*[HttpPut("{id}")]
-    public IActionResult Update(Guid id, Category category)
+    [HttpPut("{id}")]
+    public IActionResult UpdateCategory(Guid id, [FromBody] Category updatedCategory)
     {
-        
+        var result = categoryService.Update(id, updatedCategory);
+        if (result == null)
+            return NotFound();
+
+        return Ok(result);
     }
 
     [HttpDelete("{id}")]
-    public IActionResult Delete(Guid id)
+    public IActionResult DeleteCategory(Guid id)
     {
-        
-    }*/
+        bool deleted = categoryService.Delete(id);
+        if (!deleted)
+            return NotFound();
+
+        return NoContent();
+    }
     
 }
