@@ -9,30 +9,30 @@ namespace DemoProject.controller;
 public class CategoryController : ControllerBase
 {
 
-    public readonly CategoryService categoryService;
+    public readonly CategoryService _categoryService;
 
     public CategoryController(CategoryService categoryService)
     {
-        this.categoryService = categoryService;
+        this._categoryService = categoryService;
     }
     
     [HttpPost]
     public IActionResult AddCategory([FromBody] Category category)
     {
-        categoryService.Create(category);
+        _categoryService.Create(category);
         return Ok(category);
     }
 
     [HttpGet]
     public IActionResult GetAll()
     {
-        return Ok(categoryService.GetAll());
+        return Ok(_categoryService.GetAll());
     }
 
     [HttpGet("{id}")]
     public IActionResult GetById(Guid id)
     {
-        var category = categoryService.GetById(id);
+        var category = _categoryService.GetById(id);
         if (category == null)
             return NotFound();
 
@@ -42,7 +42,7 @@ public class CategoryController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateCategory(Guid id, [FromBody] Category updatedCategory)
     {
-        var result = categoryService.Update(id, updatedCategory);
+        var result = _categoryService.Update(id, updatedCategory);
         if (result == null)
             return NotFound();
 
@@ -52,7 +52,7 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteCategory(Guid id)
     {
-        bool deleted = categoryService.Delete(id);
+        bool deleted = _categoryService.Delete(id);
         if (!deleted)
             return NotFound();
 

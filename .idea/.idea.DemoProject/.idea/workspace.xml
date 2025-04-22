@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="Minor changes">
+    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/model/Category.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" afterDir="false" />
@@ -23,7 +23,6 @@
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/service/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/service/CategoryService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,23 +60,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.DemoProject: IIS Express.executor": "Run",
-    ".NET Launch Settings Profile.DemoProject: http.executor": "Run",
-    ".NET Launch Settings Profile.DemoProject: https.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "RiderIisExpressOptionsPageId",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.DemoProject: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.DemoProject: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Launch Settings Profile.DemoProject: https.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;RiderIisExpressOptionsPageId&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected=".NET Launch Settings Profile.DemoProject: http">
     <configuration name="DemoProject: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/DemoProject/DemoProject.csproj" />
@@ -135,7 +134,8 @@
       <updated>1744894677866</updated>
       <workItem from="1744894679173" duration="1415000" />
       <workItem from="1744896147996" duration="4526000" />
-      <workItem from="1745305350289" duration="3123000" />
+      <workItem from="1745305350289" duration="7678000" />
+      <workItem from="1745325405137" duration="315000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -193,7 +193,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745307751670</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="IONJ-124 add Code property to Category model and update service/controller">
+      <option name="closed" value="true" />
+      <created>1745308724346</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1745308724346</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -210,6 +218,7 @@
     <MESSAGE value="Enable routing in Program.cs" />
     <MESSAGE value="Adding Put and Delete methods" />
     <MESSAGE value="Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor changes" />
+    <MESSAGE value="IONJ-124 add Code property to Category model and update service/controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="IONJ-124 add Code property to Category model and update service/controller" />
   </component>
 </project>
