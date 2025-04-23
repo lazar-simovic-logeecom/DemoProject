@@ -27,6 +27,15 @@ public class CategoryService
     {
         category.Id = Guid.NewGuid();
         categoryList.Add(category);
+        
+        if (category.ParentCategory != null)
+        {
+            Category parent = categoryList.FirstOrDefault(c => c.Id == category.ParentCategory);
+            if (parent != null)
+            {
+                parent.SubCategory.Add(category);
+            }
+        }
     }
 
     public Category? Update(Guid id, Category updatedCategory)
@@ -37,6 +46,22 @@ public class CategoryService
             return null;
         }
 
+        if (existing.ParentCategory != updatedCategory.ParentCategory)
+        {
+            if (existing.ParentCategory != null)
+            {
+                Category oldParent = categoryList.FirstOrDefault(c => c.Id == existing.ParentCategory);
+                oldParent?.SubCategory.Remove(existing);
+            }
+
+            if (updatedCategory.ParentCategory != null)
+            {
+                Category newParent = categoryList.FirstOrDefault(c => c.Id == updatedCategory.ParentCategory);
+                newParent?.SubCategory.Add(updatedCategory);
+            }
+            existing.ParentCategory = updatedCategory.ParentCategory;
+        }
+        
         existing.Title = updatedCategory.Title;
         existing.Description = updatedCategory.Description;
         existing.Code = updatedCategory.Code;
@@ -53,6 +78,17 @@ public class CategoryService
             return false;
         }
 
+        if (category.SubCategory != null && category.SubCategory.Count > 0)
+        {
+            return false;
+        }
+
+        if (category.ParentCategory != null)
+        {
+            Category parent = categoryList.FirstOrDefault(c => c.Id == category.ParentCategory);
+            parent?.SubCategory.Remove(category);
+        }
+        
         categoryList.Remove(category);
         
         return true;

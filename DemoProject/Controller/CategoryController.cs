@@ -20,10 +20,29 @@ public class CategoryController : ControllerBase
     public IActionResult AddCategory([FromBody] Category category)
     {
         Category existingCategory = categoryService.GetById(category.Id);
+       
         if (existingCategory != null)
         {
             return BadRequest("Category with the same ID already exists.");
         }
+
+        bool sameTitle = categoryService.GetAll().Any(c => c.Title == category.Title);
+        if (sameTitle)
+        {
+            return BadRequest("Category with the same Title already exists.");
+        }
+        
+        bool sameCode = categoryService.GetAll().Any(c => c.Code == category.Code);
+        if (sameCode)
+        {
+            return BadRequest("Category with the same Code already exists.");
+        }
+        
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        
         categoryService.Create(category);
         
         return Ok(category);
@@ -41,7 +60,7 @@ public class CategoryController : ControllerBase
         Category category = categoryService.GetById(id);
         if (category == null)
         {
-            return NotFound();
+            return NotFound("Category not found.");
         }
 
         return Ok(category);
@@ -56,10 +75,15 @@ public class CategoryController : ControllerBase
             return NotFound("Category not found.");
         }
         
+        if (!ModelState.IsValid)
+        {
+            return BadRequest(ModelState);
+        }
+        
         Category result = categoryService.Update(id, updatedCategory);
         if (result == null)
         {
-            return NotFound();
+            return NotFound("Update failed: Category could not be updated.");
         }
 
         return Ok(result);
@@ -77,7 +101,7 @@ public class CategoryController : ControllerBase
         bool deleted = categoryService.Delete(id);
         if (!deleted)
         {
-            return NotFound();
+            return BadRequest("Cannot delete category that has subcategories.");
         }
 
         return NoContent();
