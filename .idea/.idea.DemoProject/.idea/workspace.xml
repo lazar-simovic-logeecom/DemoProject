@@ -9,22 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Model/Category.cs" afterDir="false" />
+    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="IONJ-124 Added subcategory support and updated service layer and controller">
       <change beforePath="$PROJECT_DIR$/DemoProject/Service/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Service/CategoryService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +121,7 @@
       <workItem from="1744896147996" duration="4526000" />
       <workItem from="1745305350289" duration="7678000" />
       <workItem from="1745325405137" duration="7823000" />
-      <workItem from="1745392373434" duration="4429000" />
+      <workItem from="1745392373434" duration="4748000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -217,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745331825423</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="IONJ-124 Added subcategory support and updated service layer and controller">
+      <option name="closed" value="true" />
+      <created>1745398950075</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1745398950076</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,6 +231,7 @@
     <MESSAGE value="IONJ-124 add Code property to Category model and update service/controller" />
     <MESSAGE value="IONJ-124 Syntax formatting" />
     <MESSAGE value="IONJ-124 Resolved all issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="IONJ-124 Resolved all issues" />
+    <MESSAGE value="IONJ-124 Added subcategory support and updated service layer and controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="IONJ-124 Added subcategory support and updated service layer and controller" />
   </component>
 </project>

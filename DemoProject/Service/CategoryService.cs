@@ -41,10 +41,6 @@ public class CategoryService
     public Category? Update(Guid id, Category updatedCategory)
     {
         Category existing = categoryList.FirstOrDefault(c => c.Id == id);
-        if (existing == null)
-        {
-            return null;
-        }
 
         if (existing.ParentCategory != updatedCategory.ParentCategory)
         {
@@ -73,10 +69,6 @@ public class CategoryService
     public bool Delete(Guid id)
     {
         Category category = categoryList.FirstOrDefault(c => c.Id == id);
-        if (category == null)
-        {
-            return false;
-        }
 
         if (category.SubCategory != null && category.SubCategory.Count > 0)
         {
