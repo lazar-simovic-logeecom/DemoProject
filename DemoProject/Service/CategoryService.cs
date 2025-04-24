@@ -80,7 +80,7 @@ public class CategoryService
             return false;
         }
         
-        if (category.SubCategories != null && category.SubCategories.Count > 0)
+        if (category.SubCategories.Count > 0)
         {
             return false;
         }
