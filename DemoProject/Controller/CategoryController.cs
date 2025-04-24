@@ -1,4 +1,5 @@
-﻿using DemoProject.Dto;
+﻿using AutoMapper;
+using DemoProject.Dto;
 using DemoProject.model;
 using DemoProject.service;
 using Microsoft.AspNetCore.Mvc;
@@ -9,12 +10,12 @@ namespace DemoProject.controller;
 [Route("api/[controller]")]
 public class CategoryController : ControllerBase
 {
-
     private readonly CategoryService categoryService;
-
-    public CategoryController(CategoryService categoryService)
+    private readonly IMapper mapper;
+    public CategoryController(CategoryService categoryService, IMapper mapper)
     {
         this.categoryService = categoryService;
+        this.mapper = mapper;
     }
     
     [HttpPost]
@@ -37,7 +38,7 @@ public class CategoryController : ControllerBase
             return BadRequest(ModelState);
         }
         
-        Category category = new Category(dto.Title, dto.Description, dto.Code, dto.ParentCategory);
+        Category category = mapper.Map<Category>(dto);
         categoryService.Create(category);
         
         return Ok(category);
@@ -69,7 +70,7 @@ public class CategoryController : ControllerBase
             return BadRequest(ModelState);
         }
 
-        Category updatedCategory = new Category(dto.Title, dto.Description, dto.Code, dto.ParentCategory);
+        Category updatedCategory = mapper.Map<Category>(dto);
         Category? result = categoryService.Update(id, updatedCategory);
         if (result == null)
         {
