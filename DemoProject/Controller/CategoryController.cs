@@ -19,7 +19,7 @@ public class CategoryController : ControllerBase
     [HttpPost]
     public IActionResult AddCategory([FromBody] Category category)
     {
-        Category existingCategory = categoryService.GetById(category.Id);
+        Category? existingCategory = categoryService.GetById(category.Id);
        
         if (existingCategory != null)
         {
@@ -57,7 +57,7 @@ public class CategoryController : ControllerBase
     [HttpGet("{id}")]
     public IActionResult GetById(Guid id)
     {
-        Category category = categoryService.GetById(id);
+        Category? category = categoryService.GetById(id);
         if (category == null)
         {
             return NotFound("Category not found.");
@@ -69,7 +69,7 @@ public class CategoryController : ControllerBase
     [HttpPut("{id}")]
     public IActionResult UpdateCategory(Guid id, [FromBody] Category updatedCategory)
     {
-        Category existingCategory = categoryService.GetById(id);
+        Category? existingCategory = categoryService.GetById(id);
         if (existingCategory == null)
         {
             return NotFound("Category not found.");
@@ -80,7 +80,7 @@ public class CategoryController : ControllerBase
             return BadRequest(ModelState);
         }
         
-        Category result = categoryService.Update(id, updatedCategory);
+        Category? result = categoryService.Update(id, updatedCategory);
         if (result == null)
         {
             return NotFound("Update failed: Category could not be updated.");
@@ -92,7 +92,7 @@ public class CategoryController : ControllerBase
     [HttpDelete("{id}")]
     public IActionResult DeleteCategory(Guid id)
     {
-        Category existingCategory = categoryService.GetById(id);
+        Category? existingCategory = categoryService.GetById(id);
         if (existingCategory == null)
         {
             return NotFound("Category not found.");
