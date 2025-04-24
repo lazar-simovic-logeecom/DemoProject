@@ -21,7 +21,6 @@ public class CategoryService
 
     public void Create(Category category)
     {
-        category.Id = Guid.NewGuid();
         categoryList.Add(category);
 
         if (category.ParentCategory == null)
@@ -66,7 +65,6 @@ public class CategoryService
         existingCategory.Title = updatedCategory.Title;
         existingCategory.Description = updatedCategory.Description;
         existingCategory.Code = updatedCategory.Code;
-        existingCategory.ParentCategory = updatedCategory.ParentCategory;
 
         return existingCategory;
     }
@@ -74,13 +72,8 @@ public class CategoryService
     public bool Delete(Guid id)
     {
         Category? category = categoryList.FirstOrDefault(c => c.Id == id);
-
-        if (category == null)
-        {
-            return false;
-        }
         
-        if (category.SubCategories.Count > 0)
+        if (category == null || category.SubCategories.Count > 0)
         {
             return false;
         }

@@ -1,4 +1,5 @@
-﻿using DemoProject.model;
+﻿using DemoProject.Dto;
+using DemoProject.model;
 using DemoProject.service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,22 +18,15 @@ public class CategoryController : ControllerBase
     }
     
     [HttpPost]
-    public IActionResult AddCategory([FromBody] Category category)
+    public IActionResult AddCategory([FromBody] CategoryDto dto)
     {
-        Category? existingCategory = categoryService.GetById(category.Id);
-       
-        if (existingCategory != null)
-        {
-            return BadRequest("Category with the same ID already exists.");
-        }
-
-        bool sameTitle = categoryService.GetAll().Any(c => c.Title == category.Title);
+        bool sameTitle = categoryService.GetAll().Any(c => c.Title == dto.Title);
         if (sameTitle)
         {
             return BadRequest("Category with the same Title already exists.");
         }
         
-        bool sameCode = categoryService.GetAll().Any(c => c.Code == category.Code);
+        bool sameCode = categoryService.GetAll().Any(c => c.Code == dto.Code);
         if (sameCode)
         {
             return BadRequest("Category with the same Code already exists.");
@@ -43,6 +37,7 @@ public class CategoryController : ControllerBase
             return BadRequest(ModelState);
         }
         
+        Category category = new Category(dto.Title, dto.Description, dto.Code, dto.ParentCategory);
         categoryService.Create(category);
         
         return Ok(category);
@@ -67,25 +62,20 @@ public class CategoryController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public IActionResult UpdateCategory(Guid id, [FromBody] Category updatedCategory)
+    public IActionResult UpdateCategory(Guid id, [FromBody] CategoryDto dto)
     {
-        Category? existingCategory = categoryService.GetById(id);
-        if (existingCategory == null)
-        {
-            return NotFound("Category not found.");
-        }
-        
         if (!ModelState.IsValid)
         {
             return BadRequest(ModelState);
         }
-        
+
+        Category updatedCategory = new Category(dto.Title, dto.Description, dto.Code, dto.ParentCategory);
         Category? result = categoryService.Update(id, updatedCategory);
         if (result == null)
         {
-            return NotFound("Update failed: Category could not be updated.");
+            return NotFound("Category not found.");
         }
-
+        
         return Ok(result);
     }
 

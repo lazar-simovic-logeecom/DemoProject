@@ -9,7 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="IONJ-124 Error correction" />
+    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="IONJ-124 Adding dto">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Model/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Service/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Service/CategoryService.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,10 +27,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock://C:/Users/lazar/RiderProjects/DemoProject/DemoProject/Program.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/lazar/RiderProjects/DemoProject/DemoProject/model/Category.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/lazar/RiderProjects/DemoProject/DemoProject/Model/Category.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/.NETCoreApp,Version=v8.0.AssemblyAttributes.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/lazar/RiderProjects/DemoProject/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -120,7 +123,7 @@
       <workItem from="1745305350289" duration="7678000" />
       <workItem from="1745325405137" duration="7823000" />
       <workItem from="1745392373434" duration="8945000" />
-      <workItem from="1745479180307" duration="332000" />
+      <workItem from="1745479180307" duration="1802000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -226,7 +229,23 @@
       <option name="project" value="LOCAL" />
       <updated>1745479428128</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="IONJ-124 Minor changes">
+      <option name="closed" value="true" />
+      <created>1745479595376</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1745479595376</updated>
+    </task>
+    <task id="LOCAL-00015" summary="IONJ-124 Adding dto">
+      <option name="closed" value="true" />
+      <created>1745480988200</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1745480988200</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -249,6 +268,8 @@
     <MESSAGE value="IONJ-124 Added subcategory support and updated service layer and controller" />
     <MESSAGE value="IONJ-124 Chagned upadte and delete service layer" />
     <MESSAGE value="IONJ-124 Error correction" />
-    <option name="LAST_COMMIT_MESSAGE" value="IONJ-124 Error correction" />
+    <MESSAGE value="IONJ-124 Minor changes" />
+    <MESSAGE value="IONJ-124 Adding dto" />
+    <option name="LAST_COMMIT_MESSAGE" value="IONJ-124 Adding dto" />
   </component>
 </project>
