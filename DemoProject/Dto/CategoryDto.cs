@@ -1,5 +1,4 @@
-﻿using DemoProject.Validators;
-
+﻿
 namespace DemoProject.Dto;
 
 public class CategoryDto

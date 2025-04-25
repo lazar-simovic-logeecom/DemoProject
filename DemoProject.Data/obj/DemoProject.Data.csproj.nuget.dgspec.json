@@ -4,14 +4,14 @@
     "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj": {
+    "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj",
-        "projectName": "DemoProject.Data",
-        "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj",
+        "projectUniqueName": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj",
+        "projectName": "DemoProject.Application",
+        "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj",
         "packagesPath": "C:\\Users\\lazar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\obj\\",
+        "outputPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lazar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -26,11 +26,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\DemoProject.Domain.csproj": {
-                "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\DemoProject.Domain.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {
@@ -67,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\DemoProject.Domain.csproj": {
+    "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\DemoProject.Domain.csproj",
-        "projectName": "DemoProject.Domain",
-        "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\DemoProject.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj",
+        "projectName": "DemoProject.Data",
+        "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj",
         "packagesPath": "C:\\Users\\lazar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Domain\\obj\\",
+        "outputPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\lazar\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -89,7 +85,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj": {
+                "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
