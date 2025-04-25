@@ -40,3 +40,5 @@ C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProjec
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Domain.pdb
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Data.dll
+C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Data.pdb

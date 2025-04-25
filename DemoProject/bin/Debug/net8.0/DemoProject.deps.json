@@ -130,10 +130,22 @@
       },
       "DemoProject.Application/1.0.0": {
         "dependencies": {
+          "DemoProject.Data": "1.0.0",
           "DemoProject.Domain": "1.0.0"
         },
         "runtime": {
           "DemoProject.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DemoProject.Data/1.0.0": {
+        "dependencies": {
+          "DemoProject.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DemoProject.Data.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -254,6 +266,11 @@
       "hashPath": "swashbuckle.aspnetcore.swaggerui.6.6.2.nupkg.sha512"
     },
     "DemoProject.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DemoProject.Data/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

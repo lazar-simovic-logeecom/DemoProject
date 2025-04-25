@@ -1,32 +1,34 @@
-﻿namespace DemoProject.Application;
-using DemoProject.Application;
+﻿using DemoProject.Data;
+using DemoProject.Data.Interface;
+
+namespace DemoProject.Application;
 using DemoProject.Domain;
-public class CategoryService : ICategoryInterface
+public class CategoryService : ICategoryService
 {
-        private static List<Category> categoryList = new();
+    private ICategoryRepository categoryRepository;
+
+    public CategoryService(ICategoryRepository categoryRepository)
+    {
+        this.categoryRepository = categoryRepository;
+    }
 
     public List<Category> GetAll()
     {
-        return categoryList;
+        return categoryRepository.GetAll();
     }
 
     public Category? GetById(Guid id)
     {
-        Category? category = categoryList.Find(x => x.Id == id);
+        Category? category = categoryRepository.GetById(id);
         
         return category;
     }
 
     public void Create(Category category)
     {
-        categoryList.Add(category);
-
-        if (category.ParentCategory == null)
-        {
-            return;
-        }
+        categoryRepository.AddCategroy(category);
         
-        Category? parent = categoryList.FirstOrDefault(c => c.Id == category.ParentCategory);
+        Category? parent = categoryRepository.GetById(category.ParentCategory);
         if (parent == null)
         {
             return;
@@ -37,8 +39,8 @@ public class CategoryService : ICategoryInterface
 
     public Category? Update(Guid id, Category updatedCategory)
     {
-        Category? existingCategory = categoryList.FirstOrDefault(c => c.Id == id);
-
+        Category? existingCategory = categoryRepository.GetById(id);
+        
         if (existingCategory == null)
         {
             return null;
@@ -48,42 +50,36 @@ public class CategoryService : ICategoryInterface
         {
             if (existingCategory.ParentCategory != null)
             {
-                Category? oldParent = categoryList.FirstOrDefault(c => c.Id == existingCategory.ParentCategory);
+                Category? oldParent = categoryRepository.GetById(existingCategory.ParentCategory);
                 oldParent?.SubCategories.Remove(existingCategory);
             }
 
             if (updatedCategory.ParentCategory != null)
             {
-                Category? newParent = categoryList.FirstOrDefault(c => c.Id == updatedCategory.ParentCategory);
+                Category? newParent = categoryRepository.GetById(updatedCategory.ParentCategory);
                 newParent?.SubCategories.Add(updatedCategory);
             }
             existingCategory.ParentCategory = updatedCategory.ParentCategory;
         }
         
-        existingCategory.Title = updatedCategory.Title;
-        existingCategory.Description = updatedCategory.Description;
-        existingCategory.Code = updatedCategory.Code;
-
-        return existingCategory;
+        return categoryRepository.Update(id, updatedCategory);
     }
 
     public bool Delete(Guid id)
     {
-        Category? category = categoryList.FirstOrDefault(c => c.Id == id);
-        
-        if (category == null || category.SubCategories.Count > 0)
+        Category? existingCategory = categoryRepository.GetById(id);
+
+        if (existingCategory == null || existingCategory.SubCategories.Any())
         {
             return false;
         }
 
-        if (category.ParentCategory != null)
+        if (existingCategory.ParentCategory.HasValue)
         {
-            Category? parent = categoryList.FirstOrDefault(c => c.Id == category.ParentCategory);
-            parent?.SubCategories.Remove(category);
+            Category? oldParent = categoryRepository.GetById(existingCategory.ParentCategory.Value);
+            oldParent?.SubCategories.Remove(existingCategory);
         }
-        
-        categoryList.Remove(category);
-        
-        return true;
+
+        return categoryRepository.Delete(id);
     }
 }

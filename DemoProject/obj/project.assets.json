@@ -230,6 +230,7 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "DemoProject.Data": "1.0.0",
           "DemoProject.Domain": "1.0.0"
         },
         "compile": {
@@ -237,6 +238,19 @@
         },
         "runtime": {
           "bin/placeholder/DemoProject.Application.dll": {}
+        }
+      },
+      "DemoProject.Data/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DemoProject.Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DemoProject.Data.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DemoProject.Data.dll": {}
         }
       },
       "DemoProject.Domain/1.0.0": {
@@ -794,6 +808,11 @@
       "type": "project",
       "path": "../DemoProject.Application/DemoProject.Application.csproj",
       "msbuildProject": "../DemoProject.Application/DemoProject.Application.csproj"
+    },
+    "DemoProject.Data/1.0.0": {
+      "type": "project",
+      "path": "../DemoProject.Data/DemoProject.Data.csproj",
+      "msbuildProject": "../DemoProject.Data/DemoProject.Data.csproj"
     },
     "DemoProject.Domain/1.0.0": {
       "type": "project",

@@ -14,3 +14,5 @@ C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\obj\Debug\net8.
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\obj\Debug\net8.0\refint\DemoProject.Application.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\obj\Debug\net8.0\DemoProject.Application.pdb
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\obj\Debug\net8.0\ref\DemoProject.Application.dll
+C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\bin\Debug\net8.0\DemoProject.Data.dll
+C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Application\bin\Debug\net8.0\DemoProject.Data.pdb

@@ -2,7 +2,7 @@
 
 namespace DemoProject.Application;
 
-public interface ICategoryInterface
+public interface ICategoryService
 {
     List<Category> GetAll();
     Category? GetById(Guid id);
