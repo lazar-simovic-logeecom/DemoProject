@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using DemoProject.Dto;
-using DemoProject.model;
+using DemoProject.Domain;
 
 namespace DemoProject.Mappings;
 

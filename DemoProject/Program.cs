@@ -1,9 +1,16 @@
 using DemoProject.Mappings;
-using DemoProject.service;
-
+using DemoProject.Application;
+using FluentValidation.AspNetCore;
+using DemoProject.Validators;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+
+builder.Services.AddControllers()
+    .AddFluentValidation(cfg =>
+    {
+        cfg.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>();
+    });
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 

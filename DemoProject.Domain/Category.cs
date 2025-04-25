@@ -1,5 +1,5 @@
-﻿namespace DemoProject.model;
-using System.ComponentModel.DataAnnotations;
+﻿namespace DemoProject.Domain;
+
 public class Category
 {
     public Guid Id { get; set; }

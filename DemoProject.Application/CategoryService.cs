@@ -1,11 +1,9 @@
-﻿using DemoProject.model;
-
-namespace DemoProject.service;
-
-public class CategoryService
+﻿namespace DemoProject.Application;
+using DemoProject.Application;
+using DemoProject.Domain;
+public class CategoryService : ICategoryInterface
 {
-
-    private static List<Category> categoryList = new();
+        private static List<Category> categoryList = new();
 
     public List<Category> GetAll()
     {
@@ -88,5 +86,4 @@ public class CategoryService
         
         return true;
     }
-    
 }

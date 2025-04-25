@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "LbDlxUOcgVo=",
+  "dgSpecHash": "LmS1q8TRu0k=",
   "success": true,
   "projectFilePath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject\\DemoProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\lazar\\.nuget\\packages\\automapper\\14.0.0\\automapper.14.0.0.nupkg.sha512",
+    "C:\\Users\\lazar\\.nuget\\packages\\fluentvalidation\\12.0.0-preview1\\fluentvalidation.12.0.0-preview1.nupkg.sha512",
+    "C:\\Users\\lazar\\.nuget\\packages\\fluentvalidation.aspnetcore\\11.3.0\\fluentvalidation.aspnetcore.11.3.0.nupkg.sha512",
+    "C:\\Users\\lazar\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\11.5.1\\fluentvalidation.dependencyinjectionextensions.11.5.1.nupkg.sha512",
     "C:\\Users\\lazar\\.nuget\\packages\\microsoft.aspnetcore.openapi\\8.0.14\\microsoft.aspnetcore.openapi.8.0.14.nupkg.sha512",
     "C:\\Users\\lazar\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\lazar\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

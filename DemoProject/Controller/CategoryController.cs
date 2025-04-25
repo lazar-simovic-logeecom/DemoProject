@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
+using DemoProject.Domain;
+using DemoProject.Application;
 using DemoProject.Dto;
-using DemoProject.model;
-using DemoProject.service;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.controller;
@@ -97,5 +97,4 @@ public class CategoryController : ControllerBase
 
         return NoContent();
     }
-    
 }
