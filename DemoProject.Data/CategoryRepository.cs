@@ -6,7 +6,7 @@ public class CategoryRepository : ICategoryRepository
 {
     private static List<Category> categoryList = new();
     
-    public void AddCategroy(Category category)
+    public void AddCategory(Category category)
     {
         categoryList.Add(category);
     }

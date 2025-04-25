@@ -10,9 +10,9 @@ namespace DemoProject.controller;
 [Route("api/[controller]")]
 public class CategoryController : ControllerBase
 {
-    private readonly CategoryService categoryService;
+    private readonly ICategoryService categoryService;
     private readonly IMapper mapper;
-    public CategoryController(CategoryService categoryService, IMapper mapper)
+    public CategoryController(ICategoryService categoryService, IMapper mapper)
     {
         this.categoryService = categoryService;
         this.mapper = mapper;
@@ -39,7 +39,10 @@ public class CategoryController : ControllerBase
         }
         
         Category category = mapper.Map<Category>(dto);
-        categoryService.Create(category);
+        if (!categoryService.Create(category))
+        {
+            return BadRequest("Failed to create category.");
+        };
         
         return Ok(category);
     }

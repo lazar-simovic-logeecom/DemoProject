@@ -24,17 +24,19 @@ public class CategoryService : ICategoryService
         return category;
     }
 
-    public void Create(Category category)
+    public bool Create(Category category)
     {
-        categoryRepository.AddCategroy(category);
-        
-        Category? parent = categoryRepository.GetById(category.ParentCategory);
-        if (parent == null)
+        if (category.ParentCategory.HasValue)
         {
-            return;
-        }
-        
+            Category? parent = categoryRepository.GetById(category.ParentCategory);
+            if (parent == null)
+            {
+                return false;
+            }
         parent.SubCategories.Add(category);
+        }
+        categoryRepository.AddCategory(category);
+        return true;
     }
 
     public Category? Update(Guid id, Category updatedCategory)

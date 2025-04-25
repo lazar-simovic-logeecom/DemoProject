@@ -2,7 +2,7 @@
 using DemoProject.Domain;
 public interface ICategoryRepository
 {
-    void AddCategroy(Category category);
+    void AddCategory(Category category);
     Category? GetById(Guid? id);
     List<Category> GetAll();
     Category? Update(Guid id, Category category);
