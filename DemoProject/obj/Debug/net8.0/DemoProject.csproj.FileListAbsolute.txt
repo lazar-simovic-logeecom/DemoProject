@@ -35,9 +35,7 @@ C:\Users\lazar\RiderProjects\DemoProject\DemoProject\obj\Debug\net8.0\DemoProjec
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\FluentValidation.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Application.dll
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Domain.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Application.pdb
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Domain.pdb
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject\bin\Debug\net8.0\DemoProject.Data.dll

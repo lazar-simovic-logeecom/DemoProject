@@ -15,11 +15,11 @@ builder.Services.AddControllers()
         cfg.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>();
     });
 
-builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
-builder.Services.AddSingleton<ICategoryRepository, CategoryRepository>();
-builder.Services.AddSingleton<ICategoryService, CategoryService>();
+//builder.Services.AddAutoMapper(typeof(AutoMapperProfile)); 
+//builder.Services.AddSingleton<ICategoryRepository, CategoryRepository>();
+//builder.Services.AddSingleton<ICategoryService, CategoryService>();
 
-builder.Services.AddSingleton<CategoryService>(); 
+//builder.Services.AddSingleton<CategoryService>(); 
 
 var app = builder.Build();
 

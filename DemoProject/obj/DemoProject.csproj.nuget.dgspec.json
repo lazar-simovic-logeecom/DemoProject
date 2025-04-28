@@ -26,7 +26,11 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj": {
+                "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Data\\DemoProject.Data.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -85,11 +89,7 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
-            "projectReferences": {
-              "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj": {
-                "projectPath": "C:\\Users\\lazar\\RiderProjects\\DemoProject\\DemoProject.Application\\DemoProject.Application.csproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

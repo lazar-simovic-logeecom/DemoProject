@@ -7,9 +7,9 @@ public class CategoryService : ICategoryService
 {
     private ICategoryRepository categoryRepository;
 
-    public CategoryService(ICategoryRepository categoryRepository)
+    public CategoryService()
     {
-        this.categoryRepository = categoryRepository;
+        categoryRepository = new CategoryRepository();
     }
 
     public List<Category> GetAll()

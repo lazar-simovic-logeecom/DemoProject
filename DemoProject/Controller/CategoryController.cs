@@ -2,6 +2,7 @@
 using DemoProject.Domain;
 using DemoProject.Application;
 using DemoProject.Dto;
+using DemoProject.Mappings;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.controller;
@@ -12,11 +13,15 @@ public class CategoryController : ControllerBase
 {
     private readonly ICategoryService categoryService;
     private readonly IMapper mapper;
-    public CategoryController(ICategoryService categoryService, IMapper mapper)
+    
+    public CategoryController()
     {
-        this.categoryService = categoryService;
-        this.mapper = mapper;
-    }
+        categoryService = new CategoryService();
+        var config = new MapperConfiguration(cfg =>
+        {
+            cfg.AddProfile<AutoMapperProfile>();
+        });
+        mapper = config.CreateMapper();    }
     
     [HttpPost]
     public IActionResult AddCategory([FromBody] CategoryDto dto)

@@ -9,39 +9,84 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="IONJ-138 Minor changes">
+    <list default="true" id="9faa5354-30ab-40da-a7db-b71f43b26e6f" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.DemoProject/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/CategoryService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/CategoryService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/Contracts/Interface/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/Interface/ICategoryRepository.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/DemoProject.Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/DemoProject.Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/Model/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/Model/Category.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Domain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/bin/Debug/net8.0/DemoProject.Domain.pdb" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/DemoProject.Application.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/ref/DemoProject.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/ref/DemoProject.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/refint/DemoProject.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/Debug/net8.0/refint/DemoProject.Application.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/DemoProject.Application.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/DemoProject.Application.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Application/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/obj/rider.project.restore.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/DemoProject.Data.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/DemoProject.Data.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject.Data/Interface/ICategoryRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/Contracts/Interface/ICategoryRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Domain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/bin/Debug/net8.0/DemoProject.Domain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProj.C67193CC.Up2Date" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.AssemblyReference.cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/DemoProject.Data.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/ref/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/ref/DemoProject.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/refint/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/Debug/net8.0/refint/DemoProject.Data.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/DemoProject.Data.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/DemoProject.Data.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Data/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject.Domain/Category.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.Application/Model/Category.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject.sln" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/DemoProject.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/DemoProject.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/Dto/CategoryDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Dto/CategoryDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Controller/CategoryController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Application.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Application.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Application.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Application.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Domain.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.Domain.pdb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/bin/Debug/net8.0/DemoProject.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/DemoProject.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/ref/DemoProject.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/Debug/net8.0/refint/DemoProject.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/DemoProject.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/DemoProject.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DemoProject/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DemoProject/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DemoProject/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/DemoProject/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -156,7 +201,8 @@
       <workItem from="1745325405137" duration="7823000" />
       <workItem from="1745392373434" duration="8945000" />
       <workItem from="1745479180307" duration="9823000" />
-      <workItem from="1745564619643" duration="17009000" />
+      <workItem from="1745564619643" duration="17140000" />
+      <workItem from="1745823527993" duration="6783000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <option name="closed" value="true" />
@@ -326,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1745579442326</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="IONJ-138 Deleted Domain project and changed references">
+      <option name="closed" value="true" />
+      <created>1745592196412</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1745592196412</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,6 +411,7 @@
     <MESSAGE value="IONJ-138 Structured the project with appropriate layers" />
     <MESSAGE value="IONJ-138 Added application architecture with service and repository layers for Category entity." />
     <MESSAGE value="IONJ-138 Minor changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="IONJ-138 Minor changes" />
+    <MESSAGE value="IONJ-138 Deleted Domain project and changed references" />
+    <option name="LAST_COMMIT_MESSAGE" value="IONJ-138 Deleted Domain project and changed references" />
   </component>
 </project>

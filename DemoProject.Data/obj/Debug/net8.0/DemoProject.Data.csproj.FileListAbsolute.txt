@@ -1,15 +1,11 @@
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\bin\Debug\net8.0\DemoProject.Data.deps.json
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\bin\Debug\net8.0\DemoProject.Data.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\bin\Debug\net8.0\DemoProject.Data.pdb
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\bin\Debug\net8.0\DemoProject.Domain.dll
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\bin\Debug\net8.0\DemoProject.Domain.pdb
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.csproj.AssemblyReference.cache
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.AssemblyInfoInputs.cache
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.AssemblyInfo.cs
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.csproj.CoreCompileInputs.cache
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.sourcelink.json
-C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProj.C67193CC.Up2Date
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\refint\DemoProject.Data.dll
 C:\Users\lazar\RiderProjects\DemoProject\DemoProject.Data\obj\Debug\net8.0\DemoProject.Data.pdb

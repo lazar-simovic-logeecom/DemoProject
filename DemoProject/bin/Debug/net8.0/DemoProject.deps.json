@@ -10,6 +10,7 @@
         "dependencies": {
           "AutoMapper": "14.0.0",
           "DemoProject.Application": "1.0.0",
+          "DemoProject.Data": "1.0.0",
           "FluentValidation": "12.0.0-preview1",
           "FluentValidation.AspNetCore": "11.3.0",
           "Microsoft.AspNetCore.OpenApi": "8.0.14",
@@ -130,8 +131,7 @@
       },
       "DemoProject.Application/1.0.0": {
         "dependencies": {
-          "DemoProject.Data": "1.0.0",
-          "DemoProject.Domain": "1.0.0"
+          "DemoProject.Data": "1.0.0"
         },
         "runtime": {
           "DemoProject.Application.dll": {
@@ -141,19 +141,8 @@
         }
       },
       "DemoProject.Data/1.0.0": {
-        "dependencies": {
-          "DemoProject.Domain": "1.0.0"
-        },
         "runtime": {
           "DemoProject.Data.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
-        }
-      },
-      "DemoProject.Domain/1.0.0": {
-        "runtime": {
-          "DemoProject.Domain.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -271,11 +260,6 @@
       "sha512": ""
     },
     "DemoProject.Data/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DemoProject.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
