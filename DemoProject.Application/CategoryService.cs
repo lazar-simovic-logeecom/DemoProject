@@ -34,7 +34,6 @@ namespace DemoProject.Application
 
         public bool Create(Category category)
         {
-           
             bool sameTitle = categoryRepository.GetAll().Any(c => c.Title == category.Title);
             if (sameTitle)
             {
