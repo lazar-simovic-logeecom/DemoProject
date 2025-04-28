@@ -1,10 +1,11 @@
 ﻿using DemoProject.Data.Interface;
-using DemoProject.Domain;
+using DemoProject.Data.Model;
 
 namespace DemoProject.Data;
 public class CategoryRepository : ICategoryRepository
 {
-    private static List<Category> categoryList = new();
+    private static readonly List<Category> categoryList = new();
+    
     
     public void AddCategory(Category category)
     {
@@ -30,10 +31,7 @@ public class CategoryRepository : ICategoryRepository
             return null;
         }
         
-        existingCategory.Title = category.Title;
-        existingCategory.Description = category.Description;
-        existingCategory.Code = category.Code;
-
+        existingCategory.Update(category);
         return existingCategory;
     }
 

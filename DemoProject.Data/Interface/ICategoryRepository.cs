@@ -1,5 +1,6 @@
-﻿namespace DemoProject.Data.Interface;
-using DemoProject.Domain;
+﻿using DemoProject.Data.Model;
+
+namespace DemoProject.Data.Interface;
 public interface ICategoryRepository
 {
     void AddCategory(Category category);

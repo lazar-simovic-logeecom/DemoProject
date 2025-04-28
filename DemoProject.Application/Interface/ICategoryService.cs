@@ -1,6 +1,6 @@
-﻿using DemoProject.Domain;
+﻿using DemoProject.Data.Model;
 
-namespace DemoProject.Application;
+namespace DemoProject.Application.Interface;
 
 public interface ICategoryService
 {
