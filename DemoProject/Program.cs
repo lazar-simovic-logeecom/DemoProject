@@ -20,7 +20,6 @@ builder.Services.AddControllers()
 /*builder.Services.AddAutoMapper(typeof(AutoMapperProfile)); 
 builder.Services.AddSingleton<ICategoryRepository, CategoryRepository>();
 builder.Services.AddSingleton<ICategoryService, CategoryService>();
-
 builder.Services.AddSingleton<CategoryService>(); */
 
 var app = builder.Build();

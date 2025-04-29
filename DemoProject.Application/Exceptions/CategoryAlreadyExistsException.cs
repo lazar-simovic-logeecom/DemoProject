@@ -1,7 +1,4 @@
 ﻿
 namespace DemoProject.Application.Exceptions;
 
-public class CategoryAlreadyExistsException : Exception
-{
-    public CategoryAlreadyExistsException(string message) : base(message) { }
-}
+public class CategoryAlreadyExistsException(string message) : Exception(message);

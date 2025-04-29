@@ -1,7 +1,3 @@
 ﻿namespace DemoProject.Application.Exceptions;
 
-public class CategoryNotFoundException : Exception
-{
-    public CategoryNotFoundException(string message) : base(message) { }
-
-}
+public class CategoryNotFoundException(string message) : Exception(message);
