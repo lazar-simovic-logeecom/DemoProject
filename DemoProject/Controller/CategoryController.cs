@@ -56,15 +56,7 @@ namespace DemoProject.Controller
         [HttpGet]
         public IActionResult GetAll()
         {
-            try
-            {
-                var categories = categoryService.GetAll();
-                return Ok(categories);
-            }
-            catch (ApplicationException ex)
-            {
-                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
-            }
+            return Ok(categoryService.GetAll());
         }
 
         [HttpGet("{id}")]
@@ -72,7 +64,7 @@ namespace DemoProject.Controller
         {
             try
             {
-                Category category = categoryService.GetById(id);
+                Category? category = categoryService.GetById(id);
                 return Ok(category);
             }
             catch (CategoryNotFoundException ex)
@@ -91,7 +83,7 @@ namespace DemoProject.Controller
             try
             {
                 Category updatedCategory = mapper.Map<Category>(dto);
-                Category updated = categoryService.Update(id, updatedCategory);
+                Category? updated = categoryService.Update(id, updatedCategory);
 
                 if (updated == null)
                 {

@@ -4,27 +4,27 @@ using DemoProject.Data.Model;
 namespace DemoProject.Data;
 public class CategoryRepository : ICategoryRepository
 {
-    private static readonly List<Category> categoryList = new();
+    private static readonly List<Category> CategoryList = new();
     
     
     public void AddCategory(Category category)
     {
-        categoryList.Add(category);
+        CategoryList.Add(category);
     }
 
     public Category? GetById(Guid? id)
     {
-        return categoryList.FirstOrDefault(x => x.Id == id);
+        return CategoryList.FirstOrDefault(x => x.Id == id);
     }
 
     public List<Category> GetAll()
     {
-        return categoryList;
+        return CategoryList;
     }
 
     public Category? Update(Guid id, Category category)
     {
-        Category? existingCategory = categoryList.FirstOrDefault(c => c.Id == id);
+        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == id);
 
         if (existingCategory == null)
         {
@@ -37,14 +37,32 @@ public class CategoryRepository : ICategoryRepository
 
     public bool Delete(Guid id)
     {
-        Category? existingCategory = categoryList.FirstOrDefault(c => c.Id == id);
+        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == id);
 
         if (existingCategory == null)
         {
             return false;
         }
                     
-        categoryList.Remove(existingCategory);
+        CategoryList.Remove(existingCategory);
         return true;
+    }
+
+    public static bool sameTitle(String title)
+    {
+        if (CategoryList.Any(c => c.Title == title))
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    public static bool sameCode(String code)
+    {
+        if (CategoryList.Any(c => c.Code == code))
+        {
+            return true;
+        }
+        return false;
     }
 }

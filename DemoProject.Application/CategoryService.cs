@@ -12,36 +12,28 @@ namespace DemoProject.Application
         
         public List<Category> GetAll()
         {
-            try
-            {
-                return categoryRepository.GetAll();
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while retrieving categories.", ex);
-            }
+            return categoryRepository.GetAll();
         }
 
         public Category? GetById(Guid id)
         {
-                Category? category = categoryRepository.GetById(id);
-                if (category == null)
-                {
-                    throw new CategoryNotFoundException($"Category with ID {id} not found.");
-                }
-                return category;
+            Category? category = categoryRepository.GetById(id);
+            if (category == null)
+            {
+                throw new CategoryNotFoundException($"Category with ID {id} not found.");
+                
+            }
+            return category;
         }
 
         public bool Create(Category category)
         {
-            bool sameTitle = categoryRepository.GetAll().Any(c => c.Title == category.Title);
-            if (sameTitle)
+            if (!CategoryRepository.sameTitle(category.Title))
             {
                 throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
             }
 
-            bool sameCode = categoryRepository.GetAll().Any(c => c.Code == category.Code);
-            if (sameCode)
+            if (!CategoryRepository.sameCode(category.Code))
             {
                 throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
             }

@@ -1,22 +1,13 @@
 ﻿namespace DemoProject.Data.Model;
 
-public class Category
+public class Category (String title, String description, String code, Guid? parent)
 {
-    public Category(string title, string description, string code, Guid? parentCategory)
-    {
-        Id = Guid.NewGuid();
-        Title = title;
-        Description = description;
-        Code = code;
-        ParentCategory = parentCategory;
-        SubCategories = new List<Category>();
-    }
-    public Guid Id { get; set; }
-    public string Title { get; set; }
-    public string Description { get; set; }
-    public string Code {get; set;}
-    public Guid? ParentCategory { get; set; }
-    public List<Category> SubCategories { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
+    public string Title { get; set; } = title;
+    public string Description { get; set; } = description;
+    public string Code {get; set;} = code;
+    public Guid? ParentCategory { get; set; } = parent;
+    public List<Category> SubCategories { get; set; } = new();
 
     public void Update(Category category)
     {
