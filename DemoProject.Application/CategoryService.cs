@@ -23,6 +23,7 @@ namespace DemoProject.Application
                 throw new CategoryNotFoundException($"Category with ID {id} not found.");
                 
             }
+            
             return category;
         }
 
@@ -51,6 +52,7 @@ namespace DemoProject.Application
             try
             {
                 categoryRepository.AddCategory(category);
+                
                 return true;
             }
             catch (Exception ex)

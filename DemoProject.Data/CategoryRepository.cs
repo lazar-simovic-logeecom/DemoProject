@@ -30,8 +30,8 @@ public class CategoryRepository : ICategoryRepository
         {
             return null;
         }
-        
         existingCategory.Update(category);
+        
         return existingCategory;
     }
 
@@ -43,8 +43,8 @@ public class CategoryRepository : ICategoryRepository
         {
             return false;
         }
-                    
         CategoryList.Remove(existingCategory);
+        
         return true;
     }
 
@@ -54,6 +54,7 @@ public class CategoryRepository : ICategoryRepository
         {
             return true;
         }
+        
         return false;
     }
     
@@ -63,6 +64,7 @@ public class CategoryRepository : ICategoryRepository
         {
             return true;
         }
+        
         return false;
     }
 }
