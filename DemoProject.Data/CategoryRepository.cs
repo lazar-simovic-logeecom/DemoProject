@@ -48,7 +48,7 @@ public class CategoryRepository : ICategoryRepository
         return true;
     }
 
-    public static bool sameTitle(String title)
+    public static bool SameTitle(String title)
     {
         if (CategoryList.Any(c => c.Title == title))
         {
@@ -57,7 +57,7 @@ public class CategoryRepository : ICategoryRepository
         return false;
     }
     
-    public static bool sameCode(String code)
+    public static bool SameCode(String code)
     {
         if (CategoryList.Any(c => c.Code == code))
         {

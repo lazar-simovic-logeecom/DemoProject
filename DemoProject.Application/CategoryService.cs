@@ -28,12 +28,12 @@ namespace DemoProject.Application
 
         public bool Create(Category category)
         {
-            if (!CategoryRepository.sameTitle(category.Title))
+            if (!CategoryRepository.SameTitle(category.Title))
             {
                 throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
             }
 
-            if (!CategoryRepository.sameCode(category.Code))
+            if (!CategoryRepository.SameCode(category.Code))
             {
                 throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
             }
