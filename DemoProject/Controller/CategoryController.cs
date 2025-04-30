@@ -10,16 +10,10 @@ namespace DemoProject.Controller
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CategoryController : ControllerBase
+    public class CategoryController (ICategoryService categoryService, IMapper mapper) : ControllerBase
     {
-        private readonly ICategoryService categoryService;
-        private readonly IMapper mapper;
-
-        public CategoryController(ICategoryService categoryService, IMapper mapper)
-        {
-            this.categoryService = categoryService;
-            this.mapper = mapper;
-        }
+        private readonly ICategoryService categoryService = categoryService;
+        private readonly IMapper mapper = mapper;
 
         [HttpPost]
         public IActionResult AddCategory([FromBody] CategoryDto dto)

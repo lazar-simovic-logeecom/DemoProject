@@ -4,14 +4,9 @@ using DemoProject.Application.Interface;
 
 namespace DemoProject.Application
 {
-    public class CategoryService : ICategoryService
+    public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
     {
-        private readonly ICategoryRepository categoryRepository;
-
-        public CategoryService(ICategoryRepository categoryRepository)
-        {
-            this.categoryRepository = categoryRepository;
-        }
+        private readonly ICategoryRepository categoryRepository = categoryRepository;
 
         public List<Category> GetAll()
         {
