@@ -37,15 +37,11 @@ namespace DemoProject.Controller
             }
             catch (CategoryAlreadyExistsException ex)
             {
-                return Conflict(new { message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (InvalidParentCategoryException ex)
             {
                 return BadRequest(new { message = ex.Message });
-            }
-            catch (ApplicationException ex)
-            {
-                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
             }
         }
 
@@ -66,10 +62,6 @@ namespace DemoProject.Controller
             catch (CategoryNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
-            }
-            catch (ApplicationException ex)
-            {
-                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
             }
         }
 
@@ -96,10 +88,6 @@ namespace DemoProject.Controller
             {
                 return BadRequest(new { message = ex.Message });
             }
-            catch (ApplicationException ex)
-            {
-                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
-            }
         }
 
         [HttpDelete("{id}")]
@@ -117,15 +105,11 @@ namespace DemoProject.Controller
             }
             catch (CategoryHasSubCategoriesException ex)
             {
-                return Conflict(new { message = ex.Message });
+                return BadRequest(new { message = ex.Message });
             }
             catch (CategoryNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
-            }
-            catch (ApplicationException ex)
-            {
-                return StatusCode(500, new { message = "Internal server error", details = ex.Message });
             }
         }
     }

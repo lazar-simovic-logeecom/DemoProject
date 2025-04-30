@@ -7,7 +7,7 @@ namespace DemoProject.Application
     public class CategoryService : ICategoryService
     {
         private readonly ICategoryRepository categoryRepository;
-        
+
         public CategoryService(ICategoryRepository categoryRepository)
         {
             this.categoryRepository = categoryRepository;
@@ -35,6 +35,7 @@ namespace DemoProject.Application
             {
                 throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
             }
+
             if (categoryRepository.GetCategoryByCode(category.Code) != null)
             {
                 throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
@@ -50,17 +51,9 @@ namespace DemoProject.Application
 
                 parent.SubCategories.Add(category);
             }
+            categoryRepository.AddCategory(category);
 
-            try
-            {
-                categoryRepository.AddCategory(category);
-
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while creating the category.", ex);
-            }
+            return true;
         }
 
         public Category? Update(Guid id, Category updatedCategory)
@@ -89,7 +82,7 @@ namespace DemoProject.Application
 
                     newParent.SubCategories.Add(updatedCategory);
                 }
-
+                
                 existingCategory.ParentCategory = updatedCategory.ParentCategory;
             }
 
