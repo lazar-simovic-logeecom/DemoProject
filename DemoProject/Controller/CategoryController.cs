@@ -1,9 +1,8 @@
 ﻿using AutoMapper;
-using DemoProject.Application;
-using DemoProject.Application.Interface;
 using DemoProject.Dto;
-using DemoProject.Data.Model;
+using DemoProject.Application.Model;
 using DemoProject.Application.Exceptions;
+using DemoProject.Application.Interface;
 using DemoProject.Mappings;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,16 +12,13 @@ namespace DemoProject.Controller
     [Route("api/[controller]")]
     public class CategoryController : ControllerBase
     {
-        private readonly ICategoryService categoryService = new CategoryService(); 
+        private readonly ICategoryService categoryService;
         private readonly IMapper mapper;
 
-        public CategoryController()
+        public CategoryController(ICategoryService categoryService, IMapper mapper)
         {
-            var config = new MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile<AutoMapperProfile>();
-            });
-            mapper = config.CreateMapper();
+            this.categoryService = categoryService;
+            this.mapper = mapper;
         }
 
         [HttpPost]

@@ -1,4 +1,4 @@
-﻿using DemoProject.Data.Model;
+﻿using DemoProject.Application.Model;
 
 namespace DemoProject.Application.Interface;
 

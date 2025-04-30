@@ -1,5 +1,5 @@
-﻿using DemoProject.Data.Interface;
-using DemoProject.Data.Model;
+﻿using DemoProject.Application.Model;
+using DemoProject.Application.Interface;
 
 namespace DemoProject.Data;
 public class CategoryRepository : ICategoryRepository
@@ -48,23 +48,13 @@ public class CategoryRepository : ICategoryRepository
         return true;
     }
 
-    public static bool SameTitle(String title)
+    public Category? GetCategoryByTitle(String title)
     {
-        if (CategoryList.Any(c => c.Title == title))
-        {
-            return true;
-        }
-        
-        return false;
+        return CategoryList.FirstOrDefault(c => c.Title == title);
     }
     
-    public static bool SameCode(String code)
+    public Category? GetCategoryByCode(String code)
     {
-        if (CategoryList.Any(c => c.Code == code))
-        {
-            return true;
-        }
-        
-        return false;
+        return CategoryList.FirstOrDefault(c => c.Code == code);
     }
 }

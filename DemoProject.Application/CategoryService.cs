@@ -1,15 +1,18 @@
 ﻿using DemoProject.Application.Exceptions;
-using DemoProject.Data.Model;
-using DemoProject.Data.Interface;
+using DemoProject.Application.Model;
 using DemoProject.Application.Interface;
-using DemoProject.Data;
 
 namespace DemoProject.Application
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepository categoryRepository = new CategoryRepository();
+        private readonly ICategoryRepository categoryRepository;
         
+        public CategoryService(ICategoryRepository categoryRepository)
+        {
+            this.categoryRepository = categoryRepository;
+        }
+
         public List<Category> GetAll()
         {
             return categoryRepository.GetAll();
@@ -21,20 +24,18 @@ namespace DemoProject.Application
             if (category == null)
             {
                 throw new CategoryNotFoundException($"Category with ID {id} not found.");
-                
             }
-            
+
             return category;
         }
 
         public bool Create(Category category)
         {
-            if (!CategoryRepository.SameTitle(category.Title))
+            if (categoryRepository.GetCategoryByTitle(category.Title) != null)
             {
                 throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
             }
-
-            if (!CategoryRepository.SameCode(category.Code))
+            if (categoryRepository.GetCategoryByCode(category.Code) != null)
             {
                 throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
             }
@@ -46,13 +47,14 @@ namespace DemoProject.Application
                 {
                     throw new InvalidParentCategoryException("Parent category does not exist.");
                 }
+
                 parent.SubCategories.Add(category);
             }
 
             try
             {
                 categoryRepository.AddCategory(category);
-                
+
                 return true;
             }
             catch (Exception ex)
@@ -84,20 +86,14 @@ namespace DemoProject.Application
                     {
                         throw new InvalidParentCategoryException("New parent category does not exist.");
                     }
+
                     newParent.SubCategories.Add(updatedCategory);
                 }
 
                 existingCategory.ParentCategory = updatedCategory.ParentCategory;
             }
 
-            try
-            {
-                return categoryRepository.Update(id, updatedCategory);
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while updating the category.", ex);
-            }
+            return categoryRepository.Update(id, updatedCategory);
         }
 
         public bool Delete(Guid id)
@@ -119,14 +115,7 @@ namespace DemoProject.Application
                 oldParent?.SubCategories.Remove(existingCategory);
             }
 
-            try
-            {
-                return categoryRepository.Delete(id);
-            }
-            catch (Exception ex)
-            {
-                throw new ApplicationException("An error occurred while deleting the category.", ex);
-            }
+            return categoryRepository.Delete(id);
         }
     }
 }

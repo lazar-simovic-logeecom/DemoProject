@@ -7,7 +7,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\DemoProject.Data\DemoProject.Data.csproj" />
+      <PackageReference Include="AutoMapper" Version="14.0.0" />
+      <PackageReference Include="FluentValidation" Version="12.0.0-preview1" />
     </ItemGroup>
+
+
 
 </Project>
