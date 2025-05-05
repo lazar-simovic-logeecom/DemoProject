@@ -4,7 +4,7 @@ using DemoProject.Application.Interface;
 namespace DemoProject.Data;
 public class CategoryRepository : ICategoryRepository
 {
-    private static readonly List<Category> CategoryList = new();
+    private readonly List<Category> CategoryList = new();
     
     
     public void AddCategory(Category category)

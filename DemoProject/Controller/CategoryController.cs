@@ -3,17 +3,14 @@ using DemoProject.Dto;
 using DemoProject.Application.Model;
 using DemoProject.Application.Exceptions;
 using DemoProject.Application.Interface;
-using DemoProject.Mappings;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.Controller
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class CategoryController (ICategoryService categoryService, IMapper mapper) : ControllerBase
+    public class CategoryController(ICategoryService categoryService, IMapper mapper) : ControllerBase
     {
-        private readonly ICategoryService categoryService = categoryService;
-        private readonly IMapper mapper = mapper;
 
         [HttpPost]
         public IActionResult AddCategory([FromBody] CategoryDto dto)
@@ -51,6 +48,7 @@ namespace DemoProject.Controller
             try
             {
                 Category? category = categoryService.GetById(id);
+
                 return Ok(category);
             }
             catch (CategoryNotFoundException ex)

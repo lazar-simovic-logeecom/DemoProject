@@ -3,38 +3,23 @@ using DemoProject.Application;
 using DemoProject.Application.Interface;
 using FluentValidation.AspNetCore;
 using DemoProject.Validators;
-using DemoProject.Application.Model;
 using DemoProject.Data;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
+using FluentValidation;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddControllers()
-    .AddFluentValidation(cfg => { cfg.RegisterValidatorsFromAssemblyContaining<CreateCategoryValidator>(); });
+builder.Services
+    .AddFluentValidationAutoValidation()
+    .AddFluentValidationClientsideAdapters();
+
+builder.Services.AddValidatorsFromAssemblyContaining<CreateCategoryValidator>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
 builder.Services.AddSingleton<ICategoryRepository, CategoryRepository>();
-builder.Services.AddSingleton<ICategoryService, CategoryService>();
-builder.Services.AddSingleton<CategoryService>();
-
-/*builder.Services.Scan(scan => scan
-    .FromAssemblyOf<ICategoryRepository>()
-    .AddClasses(classes => classes.AssignableTo<ICategoryRepository>())
-    .AsImplementedInterfaces()
-    .WithSingletonLifetime()
-);
-
-builder.Services.Scan(scan => scan
-    .FromAssemblyOf<ICategoryService>()
-    .AddClasses(classes => classes.AssignableTo<ICategoryService>())
-    .AsImplementedInterfaces()
-    .WithSingletonLifetime()
-);*/
-
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 var app = builder.Build();
 

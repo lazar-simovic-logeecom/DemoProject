@@ -6,8 +6,6 @@ namespace DemoProject.Application
 {
     public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
     {
-        private readonly ICategoryRepository categoryRepository = categoryRepository;
-
         public List<Category> GetAll()
         {
             return categoryRepository.GetAll();
@@ -38,14 +36,16 @@ namespace DemoProject.Application
 
             if (category.ParentCategory.HasValue)
             {
-                Category? parent = categoryRepository.GetById(category.ParentCategory);
-                if (parent == null)
+                if (categoryRepository.GetById(category.ParentCategory) is { } parent)
+                {
+                    parent.SubCategories.Add(category);
+                }
+                else
                 {
                     throw new InvalidParentCategoryException("Parent category does not exist.");
                 }
-
-                parent.SubCategories.Add(category);
             }
+
             categoryRepository.AddCategory(category);
 
             return true;
@@ -77,7 +77,7 @@ namespace DemoProject.Application
 
                     newParent.SubCategories.Add(updatedCategory);
                 }
-                
+
                 existingCategory.ParentCategory = updatedCategory.ParentCategory;
             }
 
