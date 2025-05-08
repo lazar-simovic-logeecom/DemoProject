@@ -1,0 +1,5 @@
+# Ignore build folders
+**/bin/
+**/obj/
+# Ignore Rider project folder
+.idea/
