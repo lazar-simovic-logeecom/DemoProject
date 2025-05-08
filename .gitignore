@@ -3,3 +3,5 @@
 **/obj/
 # Ignore Rider project folder
 .idea/
+
+.env
