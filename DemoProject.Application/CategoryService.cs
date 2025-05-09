@@ -14,6 +14,7 @@ namespace DemoProject.Application
         public Category? GetById(Guid id)
         {
             Category? category = categoryRepository.GetById(id);
+            
             if (category == null)
             {
                 throw new CategoryNotFoundException($"Category with ID {id} not found.");
