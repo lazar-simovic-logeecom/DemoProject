@@ -9,16 +9,8 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-DotNetEnv.Env.Load();
-
-var connectionString = $"Host={Environment.GetEnvironmentVariable("DB_HOST")};" +
-                       $"Port={Environment.GetEnvironmentVariable("DB_PORT")};" +
-                       $"Database={Environment.GetEnvironmentVariable("DB_NAME")};" +
-                       $"Username={Environment.GetEnvironmentVariable("DB_USER")};" +
-                       $"Password={Environment.GetEnvironmentVariable("DB_PASS")}";
-
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(connectionString));
+builder.Services.AddDbContext<DbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddControllers();
 
