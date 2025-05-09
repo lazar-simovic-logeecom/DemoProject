@@ -22,31 +22,16 @@ public class CategoryRepositoryEF(AppDbContext context) : ICategoryRepository
         return context.Categories.ToList();
     }
 
-    public Category? Update(Guid id, Category category)
+    public Category? Update(Category category)
     {
-        Category? existingCategory = context.Categories.FirstOrDefault(x => x.Id == id);
-
-        if (existingCategory != null)
-        {
-            return null;
-        }
-
-        existingCategory.Update(category);
         context.SaveChanges();
 
-        return existingCategory;
+        return category;
     }
 
-    public bool Delete(Guid id)
+    public bool Delete(Category category)
     {
-        Category? existingCategory = context.Categories.FirstOrDefault(x => x.Id == id);
-
-        if (existingCategory == null)
-        {
-            return false;
-        }
-
-        context.Categories.Remove(existingCategory);
+        context.Categories.Remove(category);
         context.SaveChanges();
 
         return true;

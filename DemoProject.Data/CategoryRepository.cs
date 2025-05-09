@@ -2,11 +2,12 @@
 using DemoProject.Application.Interface;
 
 namespace DemoProject.Data;
+
 public class CategoryRepository : ICategoryRepository
 {
     private readonly List<Category> CategoryList = new();
-    
-    
+
+
     public void AddCategory(Category category)
     {
         CategoryList.Add(category);
@@ -22,29 +23,24 @@ public class CategoryRepository : ICategoryRepository
         return CategoryList;
     }
 
-    public Category? Update(Guid id, Category category)
+    public Category? Update(Category category)
     {
-        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == id);
+        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == category.Id);
 
         if (existingCategory == null)
         {
             return null;
         }
+
         existingCategory.Update(category);
-        
+
         return existingCategory;
     }
 
-    public bool Delete(Guid id)
+    public bool Delete(Category category)
     {
-        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == id);
+        CategoryList.Remove(category);
 
-        if (existingCategory == null)
-        {
-            return false;
-        }
-        CategoryList.Remove(existingCategory);
-        
         return true;
     }
 
@@ -52,7 +48,7 @@ public class CategoryRepository : ICategoryRepository
     {
         return CategoryList.FirstOrDefault(c => c.Title == title);
     }
-    
+
     public Category? GetCategoryByCode(String code)
     {
         return CategoryList.FirstOrDefault(c => c.Code == code);

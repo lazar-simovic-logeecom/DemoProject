@@ -52,14 +52,16 @@ namespace DemoProject.Application
             return true;
         }
 
-        public Category? Update(Guid id, Category updatedCategory)
+        public Category? Update(Category updatedCategory)
         {
-            Category? existingCategory = categoryRepository.GetById(id);
+            Category? existingCategory = categoryRepository.GetById(updatedCategory.Id);
             if (existingCategory == null)
             {
-                throw new CategoryNotFoundException($"Category with ID {id} not found.");
+                throw new CategoryNotFoundException($"Category with ID {updatedCategory.Id} not found.");
             }
 
+            existingCategory.Update(updatedCategory);
+            
             if (existingCategory.ParentCategory != updatedCategory.ParentCategory)
             {
                 if (existingCategory.ParentCategory != null)
@@ -82,7 +84,7 @@ namespace DemoProject.Application
                 existingCategory.ParentCategory = updatedCategory.ParentCategory;
             }
 
-            return categoryRepository.Update(id, updatedCategory);
+            return categoryRepository.Update(existingCategory);
         }
 
         public bool Delete(Guid id)
@@ -104,7 +106,7 @@ namespace DemoProject.Application
                 oldParent?.SubCategories.Remove(existingCategory);
             }
 
-            return categoryRepository.Delete(id);
+            return categoryRepository.Delete(existingCategory);
         }
     }
 }

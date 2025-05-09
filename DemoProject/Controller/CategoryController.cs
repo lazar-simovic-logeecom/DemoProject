@@ -63,7 +63,8 @@ namespace DemoProject.Controller
             try
             {
                 Category updatedCategory = mapper.Map<Category>(dto);
-                Category? updated = categoryService.Update(id, updatedCategory);
+                updatedCategory.Id = id;
+                Category? updated = categoryService.Update(updatedCategory);
 
                 if (updated == null)
                 {
