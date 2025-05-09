@@ -5,3 +5,5 @@
 .idea/
 
 .env
+DemoProject/appsettings.Development.json
+DemoProject/appsettings.json
