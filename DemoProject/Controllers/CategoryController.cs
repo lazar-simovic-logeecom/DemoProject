@@ -11,7 +11,6 @@ namespace DemoProject.Controllers
     [Route("api/[controller]")]
     public class CategoryController(ICategoryService categoryService, IMapper mapper) : ControllerBase
     {
-
         [HttpPost]
         public async Task<IActionResult> AddCategoryAsync([FromBody] CategoryDto dto)
         {

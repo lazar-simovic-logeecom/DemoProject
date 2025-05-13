@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 
 var configuration = new ConfigurationBuilder()
-    .SetBasePath(Directory.GetCurrentDirectory()) 
+    .SetBasePath(Directory.GetCurrentDirectory())
     .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
     .Build();
 
@@ -18,8 +18,8 @@ if (string.IsNullOrWhiteSpace(connectionString))
 var serviceProvider = new ServiceCollection()
     .AddFluentMigratorCore()
     .ConfigureRunner(rb => rb
-        .AddPostgres() 
-        .WithGlobalConnectionString(connectionString) 
+        .AddPostgres()
+        .WithGlobalConnectionString(connectionString)
         .ScanIn(Assembly.Load("DemoProject.Migrations")).For.Migrations())
     .AddLogging(lb => lb.AddFluentMigratorConsole())
     .BuildServiceProvider();
@@ -27,6 +27,5 @@ var serviceProvider = new ServiceCollection()
 using (var scope = serviceProvider.CreateScope())
 {
     var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
-    runner.MigrateUp();  
+    runner.MigrateUp();
 }
-

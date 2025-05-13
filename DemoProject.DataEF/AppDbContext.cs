@@ -6,7 +6,7 @@ namespace DemoProject.DataEF;
 public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(options)
 {
     public DbSet<Category> Categories { get; set; }
-    
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Category>()
@@ -14,6 +14,6 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
             .HasMany(c => c.SubCategories)
             .WithOne()
             .HasForeignKey(c => c.ParentCategory)
-            .OnDelete(DeleteBehavior.Restrict); 
+            .OnDelete(DeleteBehavior.Restrict);
     }
 }

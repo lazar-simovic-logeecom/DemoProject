@@ -8,7 +8,7 @@ public class CategoryRepositoryEf(AppDbContext context) : ICategoryRepository
 {
     public async Task AddCategoryAsync(Category category)
     {
-        await context.Categories.AddAsync(category);
+        context.Categories.Add(category);
         await context.SaveChangesAsync();
     }
 

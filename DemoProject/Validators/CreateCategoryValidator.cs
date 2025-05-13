@@ -2,6 +2,7 @@
 using DemoProject.Dto;
 
 namespace DemoProject.Validators;
+
 public class CreateCategoryValidator : AbstractValidator<CategoryDto>
 {
     public CreateCategoryValidator()
