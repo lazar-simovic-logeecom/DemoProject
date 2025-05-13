@@ -12,5 +12,6 @@ public class AddNewColumn : Migration
 
     public override void Down()
     {
+        Delete.Column("NewColumn").FromTable("Category");
     }
 }
