@@ -1,13 +1,22 @@
 ﻿using System.Reflection;
 using FluentMigrator.Runner;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+
+var configuration = new ConfigurationBuilder()
+    .SetBasePath(Directory.GetCurrentDirectory()) 
+    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+    .Build();
+
+var connectionString = configuration.GetConnectionString("DefaultConnection");
 
 var serviceProvider = new ServiceCollection()
     .AddFluentMigratorCore()
     .ConfigureRunner(rb => rb
         .AddPostgres() 
-        .WithGlobalConnectionString("Host=localhost;Port=5432;Username=user;Password=pass;Database=DemoProjectDb") 
-        .ScanIn(Assembly.Load("DemoProject.Migrations")).For.Migrations()) 
+        .WithGlobalConnectionString(connectionString) 
+        .ScanIn(Assembly.Load("DemoProject.Migrations")).For.Migrations())
+    .AddLogging(lb => lb.AddFluentMigratorConsole())
     .BuildServiceProvider();
 
 using (var scope = serviceProvider.CreateScope())
@@ -16,4 +25,3 @@ using (var scope = serviceProvider.CreateScope())
     runner.MigrateUp();  
 }
 
-Console.WriteLine("Migracije su primenjene.");
