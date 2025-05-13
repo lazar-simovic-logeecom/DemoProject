@@ -8,49 +8,48 @@ public class CategoryRepository : ICategoryRepository
     private readonly List<Category> CategoryList = new();
 
 
-    public void AddCategory(Category category)
+    public async Task AddCategoryAsync(Category category)
     {
-        CategoryList.Add(category);
+        await Task.Run(() => CategoryList.Add(category));
     }
 
-    public Category? GetById(Guid? id)
+    public async Task<Category?> GetByIdAsync(Guid? id)
     {
-        return CategoryList.FirstOrDefault(x => x.Id == id);
+        return await Task.Run(() => CategoryList.FirstOrDefault(x => x.Id == id));
     }
 
-    public List<Category> GetAll()
+    public async Task<List<Category>> GetAllAsync()
     {
-        return CategoryList;
+        return await Task.Run(() => CategoryList.ToList());
     }
 
-    public Category? Update(Category category)
+    public async Task<Category?> UpdateAsync(Category category)
     {
-        Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == category.Id);
-
-        if (existingCategory == null)
+        return await Task.Run(() =>
         {
-            return null;
-        }
-
-        existingCategory.Update(category);
-
-        return existingCategory;
+            Category? existingCategory = CategoryList.FirstOrDefault(c => c.Id == category.Id);
+            if (existingCategory == null) return null;
+            existingCategory.Update(category);
+            return existingCategory;
+        });
     }
 
-    public bool Delete(Category category)
+    public async Task<bool> DeleteAsync(Category category)
     {
-        CategoryList.Remove(category);
-
-        return true;
+        return await Task.Run(() =>
+        {
+            CategoryList.Remove(category);
+            return true;
+        });
     }
 
-    public Category? GetCategoryByTitle(String title)
+    public async Task<Category?> GetCategoryByTitleAsync(string title)
     {
-        return CategoryList.FirstOrDefault(c => c.Title == title);
+        return await Task.Run(() => CategoryList.FirstOrDefault(c => c.Title == title));
     }
 
-    public Category? GetCategoryByCode(String code)
+    public async Task<Category?> GetCategoryByCodeAsync(string code)
     {
-        return CategoryList.FirstOrDefault(c => c.Code == code);
+        return await Task.Run(() => CategoryList.FirstOrDefault(c => c.Code == code));
     }
 }

@@ -22,7 +22,7 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateCategoryValidator>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
-builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryEF>();
+builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryEf>();
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 
 var app = builder.Build();

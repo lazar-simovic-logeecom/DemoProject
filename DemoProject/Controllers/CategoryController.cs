@@ -5,7 +5,7 @@ using DemoProject.Application.Exceptions;
 using DemoProject.Application.Interface;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DemoProject.Controller
+namespace DemoProject.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
@@ -13,18 +13,18 @@ namespace DemoProject.Controller
     {
 
         [HttpPost]
-        public IActionResult AddCategory([FromBody] CategoryDto dto)
+        public async Task<IActionResult> AddCategoryAsync([FromBody] CategoryDto dto)
         {
             try
             {
                 Category category = mapper.Map<Category>(dto);
-                bool isCreated = categoryService.Create(category);
+                bool isCreated = await categoryService.CreateAsync(category);
                 if (!isCreated)
                 {
                     return BadRequest(new { message = "Failed to create category." });
                 }
 
-                return CreatedAtAction(nameof(GetById), new { id = category.Id }, category);
+                return CreatedAtAction("GetById", new { id = category.Id }, category);
             }
             catch (CategoryAlreadyExistsException ex)
             {
@@ -37,17 +37,17 @@ namespace DemoProject.Controller
         }
 
         [HttpGet]
-        public IActionResult GetAll()
+        public async Task<IActionResult> GetAllAsync()
         {
-            return Ok(categoryService.GetAll());
+            return Ok(await categoryService.GetAllAsync());
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public async Task<IActionResult> GetByIdAsync(Guid id)
         {
             try
             {
-                Category? category = categoryService.GetById(id);
+                Category? category = await categoryService.GetByIdAsync(id);
 
                 return Ok(category);
             }
@@ -58,13 +58,13 @@ namespace DemoProject.Controller
         }
 
         [HttpPut("{id}")]
-        public IActionResult UpdateCategory(Guid id, [FromBody] CategoryDto dto)
+        public async Task<IActionResult> UpdateCategoryAsync(Guid id, [FromBody] CategoryDto dto)
         {
             try
             {
                 Category updatedCategory = mapper.Map<Category>(dto);
                 updatedCategory.Id = id;
-                Category? updated = categoryService.Update(updatedCategory);
+                Category? updated = await categoryService.UpdateAsync(updatedCategory);
 
                 if (updated == null)
                 {
@@ -84,11 +84,11 @@ namespace DemoProject.Controller
         }
 
         [HttpDelete("{id}")]
-        public IActionResult DeleteCategory(Guid id)
+        public async Task<IActionResult> DeleteCategoryAsync(Guid id)
         {
             try
             {
-                bool isDeleted = categoryService.Delete(id);
+                bool isDeleted = await categoryService.DeleteAsync(id);
                 if (!isDeleted)
                 {
                     return NotFound(new { message = "Category not found or cannot be deleted due to subcategories." });

@@ -6,14 +6,14 @@ namespace DemoProject.Application
 {
     public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
     {
-        public List<Category> GetAll()
+        public async Task<List<Category>> GetAllAsync()
         {
-            return categoryRepository.GetAll();
+            return await categoryRepository.GetAllAsync();
         }
 
-        public Category? GetById(Guid id)
+        public async Task<Category?> GetByIdAsync(Guid id)
         {
-            Category? category = categoryRepository.GetById(id);
+            Category? category = await categoryRepository.GetByIdAsync(id);
             
             if (category == null)
             {
@@ -23,21 +23,21 @@ namespace DemoProject.Application
             return category;
         }
 
-        public bool Create(Category category)
+        public async Task<bool> CreateAsync(Category category)
         {
-            if (categoryRepository.GetCategoryByTitle(category.Title) != null)
+            if (await categoryRepository.GetCategoryByTitleAsync(category.Title) != null)
             {
                 throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
             }
 
-            if (categoryRepository.GetCategoryByCode(category.Code) != null)
+            if (await categoryRepository.GetCategoryByCodeAsync(category.Code) != null)
             {
                 throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
             }
 
             if (category.ParentCategory.HasValue)
             {
-                if (categoryRepository.GetById(category.ParentCategory) is { } parent)
+                if (await categoryRepository.GetByIdAsync(category.ParentCategory) is { } parent)
                 {
                     parent.SubCategories.Add(category);
                 }
@@ -47,14 +47,14 @@ namespace DemoProject.Application
                 }
             }
 
-            categoryRepository.AddCategory(category);
+            await categoryRepository.AddCategoryAsync(category);
 
             return true;
         }
 
-        public Category? Update(Category updatedCategory)
+        public async Task<Category?> UpdateAsync(Category updatedCategory)
         {
-            Category? existingCategory = categoryRepository.GetById(updatedCategory.Id);
+            Category? existingCategory = await categoryRepository.GetByIdAsync(updatedCategory.Id);
             if (existingCategory == null)
             {
                 throw new CategoryNotFoundException($"Category with ID {updatedCategory.Id} not found.");
@@ -66,13 +66,13 @@ namespace DemoProject.Application
             {
                 if (existingCategory.ParentCategory != null)
                 {
-                    Category? oldParent = categoryRepository.GetById(existingCategory.ParentCategory);
+                    Category? oldParent = await categoryRepository.GetByIdAsync(existingCategory.ParentCategory);
                     oldParent?.SubCategories.Remove(existingCategory);
                 }
 
                 if (updatedCategory.ParentCategory != null)
                 {
-                    Category? newParent = categoryRepository.GetById(updatedCategory.ParentCategory);
+                    Category? newParent = await categoryRepository.GetByIdAsync(updatedCategory.ParentCategory);
                     if (newParent == null)
                     {
                         throw new InvalidParentCategoryException("New parent category does not exist.");
@@ -84,12 +84,12 @@ namespace DemoProject.Application
                 existingCategory.ParentCategory = updatedCategory.ParentCategory;
             }
 
-            return categoryRepository.Update(existingCategory);
+            return await categoryRepository.UpdateAsync(existingCategory);
         }
 
-        public bool Delete(Guid id)
+        public async Task<bool> DeleteAsync(Guid id)
         {
-            Category? existingCategory = categoryRepository.GetById(id);
+            Category? existingCategory = await categoryRepository.GetByIdAsync(id);
             if (existingCategory == null)
             {
                 throw new CategoryNotFoundException($"Category with ID {id} not found.");
@@ -102,11 +102,11 @@ namespace DemoProject.Application
 
             if (existingCategory.ParentCategory.HasValue)
             {
-                Category? oldParent = categoryRepository.GetById(existingCategory.ParentCategory.Value);
+                Category? oldParent = await categoryRepository.GetByIdAsync(existingCategory.ParentCategory.Value);
                 oldParent?.SubCategories.Remove(existingCategory);
             }
 
-            return categoryRepository.Delete(existingCategory);
+            return await categoryRepository.DeleteAsync(existingCategory);
         }
     }
 }
