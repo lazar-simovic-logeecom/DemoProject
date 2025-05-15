@@ -13,15 +13,17 @@ public class DeleteBackgroundService(IServiceScopeFactory scope) : BackgroundSer
         while (!stoppingToken.IsCancellationRequested)
         {
             using IServiceScope scopeFactory = scope.CreateScope();
-            ICategoryRepository categoryRepository = scopeFactory.ServiceProvider.GetRequiredService<ICategoryRepository>();
+            ICategoryRepository categoryRepository =
+                scopeFactory.ServiceProvider.GetRequiredService<ICategoryRepository>();
             List<Category> toDelete = await categoryRepository.GetCategoryToDelete();
 
             Console.Write(toDelete.Count);
-            
+
             foreach (Category category in toDelete)
             {
                 await categoryRepository.DeleteHard(category);
             }
+
             await Task.Delay(TimeSpan.FromSeconds(15), stoppingToken);
         }
     }

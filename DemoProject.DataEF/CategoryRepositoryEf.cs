@@ -55,7 +55,8 @@ public class CategoryRepositoryEf(AppDbContext context, LoggingService loggingSe
 
     public async Task<List<Category>> GetCategoryToDelete()
     {
-        return await context.Categories.Where(c => c.DeletedAt != null && c.DeletedAt <= DateTime.UtcNow.AddSeconds(-60)).ToListAsync();
+        return await context.Categories
+            .Where(c => c.DeletedAt != null && c.DeletedAt <= DateTime.UtcNow.AddSeconds(-60)).ToListAsync();
     }
 
     public async Task<bool> DeleteHard(Category category)
@@ -64,4 +65,4 @@ public class CategoryRepositoryEf(AppDbContext context, LoggingService loggingSe
         await context.SaveChangesAsync();
         return true;
     }
-} 
+}

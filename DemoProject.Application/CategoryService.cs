@@ -14,7 +14,7 @@ namespace DemoProject.Application
         public async Task<Category?> GetByIdAsync(Guid id)
         {
             Category? category = await categoryRepository.GetByIdAsync(id);
-            
+
             if (category == null)
             {
                 throw new CategoryNotFoundException($"Category with ID {id} not found.");
@@ -61,7 +61,7 @@ namespace DemoProject.Application
             }
 
             existingCategory.Update(updatedCategory);
-            
+
             if (existingCategory.ParentCategory != updatedCategory.ParentCategory)
             {
                 if (existingCategory.ParentCategory != null)
