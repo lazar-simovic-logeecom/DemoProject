@@ -8,6 +8,7 @@ public class Category()
     public string Code { get; set; }
     public Guid? ParentCategory { get; set; }
     public List<Category> SubCategories { get; set; } = new();
+    public DateTime? DeletedAt { get; set; }
 
     public void Update(Category category)
     {

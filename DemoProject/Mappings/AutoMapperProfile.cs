@@ -10,6 +10,7 @@ public class AutoMapperProfile : Profile
     {
         CreateMap<CategoryDto, Category>()
             .ForMember(dest => dest.Id, opt => opt.Ignore())
-            .ForMember(dest => dest.SubCategories, opt => opt.Ignore());
+            .ForMember(dest => dest.SubCategories, opt => opt.Ignore())
+            .ForMember(dest => dest.DeletedAt, opt => opt.Ignore());
     }
 }
