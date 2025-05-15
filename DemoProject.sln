@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProject.DataEF", "DemoP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProject.Migrations", "DemoProject.Migrations\DemoProject.Migrations.csproj", "{2FCA2F26-FCE4-49DF-BB32-1430D5410130}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProject.Background", "DemoProject.Background\DemoProject.Background.csproj", "{50C4D9F5-F148-48C3-B598-B10EC55F0957}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{2FCA2F26-FCE4-49DF-BB32-1430D5410130}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2FCA2F26-FCE4-49DF-BB32-1430D5410130}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2FCA2F26-FCE4-49DF-BB32-1430D5410130}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50C4D9F5-F148-48C3-B598-B10EC55F0957}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50C4D9F5-F148-48C3-B598-B10EC55F0957}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50C4D9F5-F148-48C3-B598-B10EC55F0957}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50C4D9F5-F148-48C3-B598-B10EC55F0957}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -52,4 +52,15 @@ public class CategoryRepository : ICategoryRepository
     {
         return await Task.Run(() => CategoryList.FirstOrDefault(c => c.Code == code));
     }
+
+    public async Task<List<Category>> GetCategoryToDelete()
+    {
+        return await Task.Run(() => CategoryList.Where(c => c.DeletedAt != null).ToList());
+    }
+
+    public Task<bool> DeleteHard(Category category)
+    {
+        throw new NotImplementedException();
+    }
+    
 }

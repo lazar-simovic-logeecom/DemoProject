@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DemoProject.Application\DemoProject.Application.csproj" />
+      <ProjectReference Include="..\DemoProject.Background\DemoProject.Background.csproj" />
       <ProjectReference Include="..\DemoProject.DataEF\DemoProject.DataEF.csproj" />
       <ProjectReference Include="..\DemoProject.Data\DemoProject.Data.csproj" />
     </ItemGroup>

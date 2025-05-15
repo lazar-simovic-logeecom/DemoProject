@@ -10,5 +10,6 @@ public interface ICategoryRepository
     Task<bool> DeleteAsync(Category category);
     Task<Category?> GetCategoryByTitleAsync(String title);
     Task<Category?> GetCategoryByCodeAsync(String code);
-    
+    Task<List<Category>> GetCategoryToDelete();
+    Task<bool> DeleteHard(Category category);
 }
