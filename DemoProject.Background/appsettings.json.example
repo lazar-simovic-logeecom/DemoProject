@@ -1,0 +1,13 @@
+{
+    "Logging": {
+        "LogLevel": {
+            "Default": "Debug",
+            "System": "Information",
+            "Microsoft": "Information"
+        }
+    },
+    
+    "ConnectionStrings": {
+        "DefaultConnection": "Host=your_host;Port=your_port;Database=your_database;Username=your_username;Password=your_password"
+    }
+}
