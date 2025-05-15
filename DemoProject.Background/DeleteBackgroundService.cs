@@ -6,15 +6,8 @@ using Microsoft.Extensions.Hosting;
 
 namespace DemoProject.Background;
 
-public class DeleteBackgroundService : BackgroundService
+public class DeleteBackgroundService(IServiceScopeFactory scope) : BackgroundService
 {
-    private readonly IServiceScopeFactory scope;
-
-    public DeleteBackgroundService(IServiceScopeFactory scope)
-    {
-        this.scope = scope;
-    }
-    
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)

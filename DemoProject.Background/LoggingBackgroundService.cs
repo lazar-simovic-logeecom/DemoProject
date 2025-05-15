@@ -4,15 +4,8 @@ using Microsoft.Extensions.Hosting;
 
 namespace DemoProject.Background;
 
-public class LoggingBackgroundService : BackgroundService
+public class LoggingBackgroundService(Channel<string> logChannel) : BackgroundService
 {
-    private readonly Channel<string> logChannel;
-
-    public LoggingBackgroundService(Channel<string> logChannel)
-    {
-        this.logChannel = logChannel;
-    }
-
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
         while (!stoppingToken.IsCancellationRequested)
