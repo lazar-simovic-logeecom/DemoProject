@@ -1,5 +1,4 @@
 using System.Threading.Channels;
-using DemoProject.Application.Services;
 using Microsoft.Extensions.Hosting;
 
 namespace DemoProject.Background;
