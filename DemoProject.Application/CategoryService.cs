@@ -1,6 +1,7 @@
 ﻿using DemoProject.Application.Exceptions;
 using DemoProject.Application.Model;
 using DemoProject.Application.Interface;
+using DemoProject.Application.Services;
 
 namespace DemoProject.Application
 {
