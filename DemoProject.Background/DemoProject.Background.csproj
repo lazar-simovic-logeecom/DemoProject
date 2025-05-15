@@ -15,5 +15,9 @@
       <ProjectReference Include="..\DemoProject.Application\DemoProject.Application.csproj" />
       <ProjectReference Include="..\DemoProject.DataEF\DemoProject.DataEF.csproj" />
     </ItemGroup>
-
+    <ItemGroup>
+        <None Update="appsettings.json">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </None>
+    </ItemGroup>
 </Project>
