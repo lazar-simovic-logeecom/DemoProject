@@ -53,6 +53,11 @@ public class CategoryRepository : ICategoryRepository
         return await Task.Run(() => CategoryList.FirstOrDefault(c => c.Code == code));
     }
 
+    public Task<List<Category>> GetCategoryToDelete(DateTime difference)
+    {
+        throw new NotImplementedException();
+    }
+
     public async Task<List<Category>> GetCategoryToDelete()
     {
         return await Task.Run(() => CategoryList.Where(c => c.DeletedAt != null).ToList());

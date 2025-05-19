@@ -3,6 +3,7 @@ using DemoProject.Dto;
 using DemoProject.Application.Model;
 using DemoProject.Application.Exceptions;
 using DemoProject.Application.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DemoProject.Controllers
