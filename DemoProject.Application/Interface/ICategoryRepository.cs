@@ -8,8 +8,8 @@ public interface ICategoryRepository
     Task<List<Category>> GetAllAsync();
     Task<Category?> UpdateAsync(Category category);
     Task<bool> DeleteAsync(Category category);
-    Task<Category?> GetCategoryByTitleAsync(String title);
-    Task<Category?> GetCategoryByCodeAsync(String code);
-    Task<List<Category>> GetCategoryToDelete();
+    Task<Category?> GetCategoryByTitleAsync(string title);
+    Task<Category?> GetCategoryByCodeAsync(string code);
+    Task<List<Category>> GetCategoryToDelete(DateTime difference);
     Task<bool> DeleteHard(Category category);
 }

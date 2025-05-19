@@ -37,14 +37,13 @@ namespace DemoProject.Application
 
             if (category.ParentCategory.HasValue)
             {
-                if (await categoryRepository.GetByIdAsync(category.ParentCategory) is { } parent)
+                Category? parent = await categoryRepository.GetByIdAsync(category.ParentCategory.Value);
+                if (parent == null)
                 {
-                    parent.SubCategories.Add(category);
+                    throw new CategoryNotFoundException("Parent category not found.");
                 }
-                else
-                {
-                    throw new InvalidParentCategoryException("Parent category does not exist.");
-                }
+
+                parent.SubCategories.Add(category);
             }
 
             await categoryRepository.AddCategoryAsync(category);

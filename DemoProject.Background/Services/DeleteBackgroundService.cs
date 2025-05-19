@@ -15,7 +15,9 @@ public class DeleteBackgroundService(IServiceScopeFactory scope) : BackgroundSer
             using IServiceScope scopeFactory = scope.CreateScope();
             ICategoryRepository categoryRepository =
                 scopeFactory.ServiceProvider.GetRequiredService<ICategoryRepository>();
-            List<Category> toDelete = await categoryRepository.GetCategoryToDelete();
+            
+            DateTime difference = DateTime.UtcNow.AddSeconds(-60);
+            List<Category> toDelete = await categoryRepository.GetCategoryToDelete(difference);
 
             Console.Write(toDelete.Count);
 
