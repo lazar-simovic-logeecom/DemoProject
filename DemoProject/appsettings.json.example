@@ -9,5 +9,9 @@
 
   "ConnectionStrings": {
     "DefaultConnection": "Host=your_host;Port=your_port;Database=your_database;Username=your_username;Password=your_password"
-  }
-}
+  },
+  "Jwt": {
+    "Key": "Tajni kljuc",
+    "Issuer": "DemoProject",
+    "Audience": "DemoProjectUsers"
+  }}
