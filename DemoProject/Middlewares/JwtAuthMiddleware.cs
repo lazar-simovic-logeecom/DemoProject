@@ -57,14 +57,7 @@ public class JwtAuthMiddleware(RequestDelegate next)
 
             return;
         }
-        catch (Exception)
-        {
-            context.Response.StatusCode = 401;
-            await context.Response.WriteAsync("Invalid token");
-
-            return;
-        }
-
+        
         await next(context);
     }
 
@@ -77,7 +70,7 @@ public class JwtAuthMiddleware(RequestDelegate next)
             return false;
         }
 
-        if (context.Request.Method != HttpMethods.Post)
+        if (context.Request.Method == HttpMethods.Get)
         {
             return false;
         }
