@@ -11,11 +11,15 @@ public class LoggingService
         await logChannel.Writer.WriteAsync(message);
     }
 
-    public async Task ProcessLogs(CancellationToken stoppingToken)
+    public async Task<string?> ReadAsync(CancellationToken cancellationToken)
     {
-        await foreach (var logMessage in logChannel.Reader.ReadAllAsync(stoppingToken))
+        try
         {
-            Console.WriteLine($"Log: {logMessage}");
+            return await logChannel.Reader.ReadAsync(cancellationToken);
+        }
+        catch (ChannelClosedException)
+        {
+            return null;
         }
     }
 }

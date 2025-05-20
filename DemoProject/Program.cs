@@ -4,7 +4,7 @@ using DemoProject.Mappings;
 using DemoProject.Application;
 using DemoProject.Application.Interface;
 using DemoProject.Application.Services;
-using DemoProject.Background;
+using DemoProject.Background.Services;
 using FluentValidation.AspNetCore;
 using DemoProject.Validators;
 using DemoProject.DataEF;

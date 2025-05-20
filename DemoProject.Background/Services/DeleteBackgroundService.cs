@@ -1,10 +1,9 @@
-using DemoProject.Application;
 using DemoProject.Application.Interface;
 using DemoProject.Application.Model;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-namespace DemoProject.Background;
+namespace DemoProject.Background.Services;
 
 public class DeleteBackgroundService(IServiceScopeFactory scope) : BackgroundService
 {

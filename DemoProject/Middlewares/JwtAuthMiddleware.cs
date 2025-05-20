@@ -1,5 +1,6 @@
 using System.IdentityModel.Tokens.Jwt;
 using DemoProject.Application.Interface;
+using DemoProject.Application.Model;
 using Microsoft.IdentityModel.Tokens;
 
 namespace DemoProject.Middlewares;
@@ -8,15 +9,15 @@ public class JwtAuthMiddleware(RequestDelegate next)
 {
     public async Task Invoke(HttpContext context, IUserRepository repo, TokenValidationParameters validationParameters)
     {
-        var token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-
+        string? token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
+        
         if (!RequiresAuthentication(context))
         {
             await next(context);
 
             return;
         }
-
+        
         if (token == null)
         {
             context.Response.StatusCode = 401;
@@ -25,7 +26,7 @@ public class JwtAuthMiddleware(RequestDelegate next)
             return;
         }
 
-        var user = await repo.GetByTokenAsync(token);
+        User? user = await repo.GetByTokenAsync(token);
         if (user == null)
         {
             context.Response.StatusCode = 401;
@@ -34,6 +35,14 @@ public class JwtAuthMiddleware(RequestDelegate next)
             return;
         }
 
+        if (user.Role != "Admin")
+        {
+            context.Response.StatusCode = 403;
+            await context.Response.WriteAsync("Forbidden: User is not an Admin");
+            
+            return;
+        }
+        
         var tokenHandler = new JwtSecurityTokenHandler();
 
         try

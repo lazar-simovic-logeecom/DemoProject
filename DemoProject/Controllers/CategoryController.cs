@@ -81,6 +81,10 @@ namespace DemoProject.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
+            catch (CategoryHasBeenDeletedException ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
         [HttpDelete("{id}")]

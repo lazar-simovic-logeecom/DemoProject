@@ -15,6 +15,5 @@ public class Category()
         Title = category.Title;
         Description = category.Description;
         Code = category.Code;
-        ParentCategory = category.ParentCategory;
     }
 }

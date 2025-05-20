@@ -1,8 +1,7 @@
-using System.Threading.Channels;
 using DemoProject.Application.Services;
 using Microsoft.Extensions.Hosting;
 
-namespace DemoProject.Background;
+namespace DemoProject.Background.Services;
 
 public class LoggingBackgroundService(LoggingService loggingService) : BackgroundService
 {
@@ -10,7 +9,12 @@ public class LoggingBackgroundService(LoggingService loggingService) : Backgroun
     {
         while (!stoppingToken.IsCancellationRequested)
         {
-            await loggingService.ProcessLogs(stoppingToken);
+            var message = await loggingService.ReadAsync(stoppingToken);
+
+            if (message != null)
+            {
+                Console.WriteLine($"[LOG] {message}");
+            }
         }
     }
 }

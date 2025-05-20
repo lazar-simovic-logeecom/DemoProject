@@ -1,7 +1,6 @@
-﻿using System.Threading.Channels;
-using DemoProject.Application.Interface;
+﻿using DemoProject.Application.Interface;
 using DemoProject.Application.Services;
-using DemoProject.Background;
+using DemoProject.Background.Services;
 using DemoProject.DataEF;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,7 +9,7 @@ using Microsoft.Extensions.Hosting;
 
 
 var builder = Host.CreateDefaultBuilder(args)
-    .ConfigureAppConfiguration((hostingContext, config) =>
+    .ConfigureAppConfiguration((config) =>
     {
         config.Sources.Clear();
 

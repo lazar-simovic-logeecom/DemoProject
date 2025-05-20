@@ -37,6 +37,11 @@ namespace DemoProject.Application
 
             if (category.ParentCategory.HasValue)
             {
+                if (category.ParentCategory == category.Id)
+                {
+                    throw new InvalidParentCategoryException("Category cannot be its own parent.");
+                }
+
                 Category? parent = await categoryRepository.GetByIdAsync(category.ParentCategory.Value);
                 if (parent == null)
                 {
@@ -59,19 +64,29 @@ namespace DemoProject.Application
                 throw new CategoryNotFoundException($"Category with ID {updatedCategory.Id} not found.");
             }
 
+            if (updatedCategory.ParentCategory == updatedCategory.Id)
+            {
+                throw new InvalidParentCategoryException("A category cannot be its own parent.");
+            }
+
+            if (existingCategory.DeletedAt.HasValue)
+            {
+                throw new CategoryHasBeenDeletedException("Category with ID " + updatedCategory.Id + " has been deleted."); 
+            }
+            
             existingCategory.Update(updatedCategory);
 
             if (existingCategory.ParentCategory != updatedCategory.ParentCategory)
             {
-                if (existingCategory.ParentCategory != null)
+                if (existingCategory.ParentCategory.HasValue)
                 {
-                    Category? oldParent = await categoryRepository.GetByIdAsync(existingCategory.ParentCategory);
+                    Category? oldParent = await categoryRepository.GetByIdAsync(existingCategory.ParentCategory.Value);
                     oldParent?.SubCategories.Remove(existingCategory);
                 }
 
-                if (updatedCategory.ParentCategory != null)
+                if (updatedCategory.ParentCategory.HasValue)
                 {
-                    Category? newParent = await categoryRepository.GetByIdAsync(updatedCategory.ParentCategory);
+                    Category? newParent = await categoryRepository.GetByIdAsync(updatedCategory.ParentCategory.Value);
                     if (newParent == null)
                     {
                         throw new InvalidParentCategoryException("New parent category does not exist.");
