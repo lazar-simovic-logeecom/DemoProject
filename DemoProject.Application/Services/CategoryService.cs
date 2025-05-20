@@ -2,7 +2,7 @@
 using DemoProject.Application.Model;
 using DemoProject.Application.Interface;
 
-namespace DemoProject.Application
+namespace DemoProject.Application.Services
 {
     public class CategoryService(ICategoryRepository categoryRepository) : ICategoryService
     {
