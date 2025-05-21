@@ -25,7 +25,7 @@ namespace DemoProject.Controllers
 
                 return CreatedAtAction("GetById", new { id = category.Id }, category);
             }
-            catch (CategoryAlreadyExistsException ex)
+            catch (ModelAlreadyExistsException ex)
             {
                 return BadRequest(new { message = ex.Message });
             }
@@ -50,7 +50,7 @@ namespace DemoProject.Controllers
 
                 return Ok(category);
             }
-            catch (CategoryNotFoundException ex)
+            catch (ModelNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
             }
@@ -72,7 +72,7 @@ namespace DemoProject.Controllers
 
                 return Ok(updated);
             }
-            catch (CategoryNotFoundException ex)
+            catch (ModelNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
             }
@@ -103,7 +103,7 @@ namespace DemoProject.Controllers
             {
                 return BadRequest(new { message = ex.Message });
             }
-            catch (CategoryNotFoundException ex)
+            catch (ModelNotFoundException ex)
             {
                 return NotFound(new { message = ex.Message });
             }
