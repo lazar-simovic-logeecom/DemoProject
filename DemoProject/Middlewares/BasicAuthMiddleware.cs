@@ -53,7 +53,7 @@ public class BasicAuthMiddleware(RequestDelegate next)
 
             string method = context.Request.Method;
 
-            if ((method != "GET") && user.Role != "Admin")
+            if (method != "GET" && user.Role != "Admin")
             {
                 context.Response.StatusCode = 403;
                 await context.Response.WriteAsync("Forbidden: User is not an Admin");
@@ -64,7 +64,7 @@ public class BasicAuthMiddleware(RequestDelegate next)
             context.Items["User"] = user;
             await next(context);
         }
-        catch (Exception ex)
+        catch
         {
             context.Response.StatusCode = 401;
             await context.Response.WriteAsync("Authentication failed.");

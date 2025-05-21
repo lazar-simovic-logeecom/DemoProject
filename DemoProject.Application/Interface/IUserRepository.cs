@@ -8,5 +8,5 @@ public interface IUserRepository
     Task<User?> GetByTokenAsync(string token);
     Task CreateAsync(User user);
     Task UpdateTokenAsync(Guid userId, string token);
-    Task<bool> GetUserByUsername(string userUsername);
+    Task<bool> GetUserByUsername(string username);
 }

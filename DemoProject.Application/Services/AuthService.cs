@@ -13,10 +13,12 @@ public class AuthService(IUserRepository userRepository, IConfiguration config) 
 {
     public async Task<User?> AuthenticateBasicAsync(string username, string password)
     {
-        var user = await userRepository.GetByUsernameAsync(username);
+        User? user = await userRepository.GetByUsernameAsync(username);
 
         if (user == null)
+        {
             return null;
+        }
 
         bool isPasswordValid = BCrypt.Net.BCrypt.Verify(password, user.Password);
 
@@ -29,6 +31,7 @@ public class AuthService(IUserRepository userRepository, IConfiguration config) 
         {
             throw new UserAlreadyExistsException("User with this username already exists.");
         }
+
         user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
         await userRepository.CreateAsync(user);
 
@@ -37,7 +40,7 @@ public class AuthService(IUserRepository userRepository, IConfiguration config) 
 
     public async Task<string?> LoginAsync(string username, string password)
     {
-        var user = await userRepository.GetByUsernameAsync(username);
+        User? user = await userRepository.GetByUsernameAsync(username);
         if (user == null || !BCrypt.Net.BCrypt.Verify(password, user.Password))
         {
             return null;
@@ -46,10 +49,16 @@ public class AuthService(IUserRepository userRepository, IConfiguration config) 
         var tokenHandler = new JwtSecurityTokenHandler();
         var key = Encoding.UTF8.GetBytes(config["Jwt:Key"]!);
 
+        var claims = new List<Claim>
+        {
+            new(ClaimTypes.Name, user.Username),
+            new(ClaimTypes.Role, user.Role)
+        };
+
         var tokenDescriptor = new SecurityTokenDescriptor
         {
-            Subject = new ClaimsIdentity(new[] { new Claim(ClaimTypes.Name, user.Username) }),
-            Expires = DateTime.UtcNow.AddMinutes(1),
+            Subject = new ClaimsIdentity(claims),
+            Expires = DateTime.UtcNow.AddMinutes(100),
             SigningCredentials =
                 new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };

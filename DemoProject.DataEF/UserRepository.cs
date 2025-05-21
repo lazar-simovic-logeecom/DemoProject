@@ -24,7 +24,7 @@ public class UserRepository(AppDbContext context) : IUserRepository
 
     public async Task UpdateTokenAsync(Guid userId, string token)
     {
-        var user = await context.Users.FindAsync(userId);
+        User? user = await context.Users.FindAsync(userId);
         if (user == null)
         {
             return;
@@ -34,8 +34,8 @@ public class UserRepository(AppDbContext context) : IUserRepository
         await context.SaveChangesAsync();
     }
 
-    public Task<bool> GetUserByUsername(string userUsername)
+    public Task<bool> GetUserByUsername(string username)
     {
-        return context.Users.AnyAsync(c => c.Username == userUsername);
+        return context.Users.AnyAsync(c => c.Username == username);
     }
 }

@@ -9,14 +9,14 @@ public class JwtAuthMiddleware(RequestDelegate next)
 {
     public async Task Invoke(HttpContext context, IUserRepository repo, TokenValidationParameters validationParameters)
     {
-        string? token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
-        
         if (!RequiresAuthentication(context))
         {
             await next(context);
 
             return;
         }
+        
+        string? token = context.Request.Headers["Authorization"].FirstOrDefault()?.Split(" ").Last();
         
         if (token == null)
         {
@@ -35,19 +35,21 @@ public class JwtAuthMiddleware(RequestDelegate next)
             return;
         }
 
-        if (user.Role != "Admin")
+        string method = context.Request.Method;
+
+        if (method != "GET" && user.Role != "Admin")
         {
             context.Response.StatusCode = 403;
             await context.Response.WriteAsync("Forbidden: User is not an Admin");
             
             return;
         }
-        
-        var tokenHandler = new JwtSecurityTokenHandler();
 
+        JwtSecurityTokenHandler tokenHandler = new();
+        
         try
         {
-            var principal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
+            var principal = tokenHandler.ValidateToken(token, validationParameters, out _);
             context.User = principal;
         }
         catch (SecurityTokenExpiredException)
@@ -66,11 +68,6 @@ public class JwtAuthMiddleware(RequestDelegate next)
         var path = context.Request.Path.ToString().ToLower();
 
         if (path.Contains("/api/login") || path.Contains("/api/register"))
-        {
-            return false;
-        }
-
-        if (context.Request.Method == HttpMethods.Get)
         {
             return false;
         }
