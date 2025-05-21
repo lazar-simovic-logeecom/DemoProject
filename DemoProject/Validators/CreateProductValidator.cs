@@ -17,6 +17,6 @@ public class CreateProductValidator : AbstractValidator<ProductDto>
             .NotEmpty().WithMessage("Brand is required.").NotNull()
             .MaximumLength(20).WithMessage("Brand can't be longer than 20 characters.");
         RuleFor(x => x.Price)
-            .NotEmpty().WithMessage("Price is required.").NotNull();
+            .NotEmpty().WithMessage("Price is required.").NotNull().GreaterThanOrEqualTo(0);
     }
 }

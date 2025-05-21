@@ -19,9 +19,9 @@ public class ProductService(IProductRepository productRepository, ICategoryRepos
         {
             throw new ModelNotFoundException("Product not found");
         }
-
         product.GetTime = DateTime.UtcNow;
         Product? newProduct = await productRepository.UpdateProductAsync(product);
+        
         return newProduct;
     }
 

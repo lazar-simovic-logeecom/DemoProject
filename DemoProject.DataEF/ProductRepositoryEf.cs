@@ -25,6 +25,7 @@ public class ProductRepositoryEf(AppDbContext context) : IProductRepository
     public async Task<Product?> UpdateProductAsync(Product product)
     {
         await context.SaveChangesAsync();
+        
         return product;
     }
 

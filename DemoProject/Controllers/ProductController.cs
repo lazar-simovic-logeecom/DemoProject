@@ -9,13 +9,20 @@ namespace DemoProject.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ProductController(IProductService productService, ICategoryService categoryService, IMapper mapper)
+public class ProductController(IProductService productService, IMapper mapper)
     : ControllerBase
 {
     [HttpGet]
     public async Task<IActionResult> GetAllProductsAsync()
     {
-        return Ok(await productService.GetProductsAsync());
+        try
+        {
+            return Ok(await productService.GetProductsAsync());
+        }
+        catch
+        {
+            return BadRequest(new { message = "Can't get products" });
+        }
     }
 
     [HttpGet("{id}")]
@@ -82,9 +89,9 @@ public class ProductController(IProductService productService, ICategoryService 
     {
         try
         {
-            bool isdeleted = await productService.DeleteProductAsync(id);
+            bool isDeleted = await productService.DeleteProductAsync(id);
 
-            if (!isdeleted)
+            if (!isDeleted)
             {
                 return BadRequest(new { message = "Product not deleted" });
             }
