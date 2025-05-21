@@ -26,10 +26,11 @@ var builder = Host.CreateDefaultBuilder(args)
 
         services.AddSingleton<LoggingService>();
         services.AddHostedService<DeleteBackgroundService>();
+        services.AddHostedService<GetByIdBackgroundService>();
+
         services.AddScoped<ICategoryRepository, CategoryRepositoryEf>();
         services.AddScoped<IProductRepository, ProductRepositoryEf>();
         services.AddScoped<IProductService, ProductService>();
-        services.AddHostedService<GetByIdBackgroundService>();
     });
 
 var app = builder.Build();

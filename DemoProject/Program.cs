@@ -1,7 +1,6 @@
 using System.Text;
 using System.Threading.Channels;
 using DemoProject.Mappings;
-using DemoProject.Application;
 using DemoProject.Application.Interface;
 using DemoProject.Application.Services;
 using DemoProject.Background.Services;
