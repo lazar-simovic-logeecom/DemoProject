@@ -33,11 +33,12 @@ builder.Services.AddValidatorsFromAssemblyContaining<CreateCategoryValidator>();
 
 builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
 
-builder.Services.AddScoped<IAuthService, AuthService>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-
 builder.Services.AddTransient<ICategoryService, CategoryService>();
 builder.Services.AddTransient<ICategoryRepository, CategoryRepositoryEf>();
+
+builder.Services.AddTransient<IProductService, ProductService>();
+builder.Services.AddTransient<IProductRepository, ProductRepositoryEf
+>();
 
 builder.Services.AddTransient<IAuthService, AuthService>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();

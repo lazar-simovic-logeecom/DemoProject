@@ -17,13 +17,15 @@ public class CategoryRepositoryEf(AppDbContext context, LoggingService loggingSe
     public async Task<Category?> GetByIdAsync(Guid? id)
     {
         await loggingService.LogAsync($"Researching category with id = {id}");
-        return await context.Categories.Include(c => c.SubCategories).FirstOrDefaultAsync(x => x.Id == id);
+        return await context.Categories.Include(c => c.SubCategories).Include(c => c.Products)
+            .FirstOrDefaultAsync(x => x.Id == id);
     }
 
     public async Task<List<Category>> GetAllAsync()
     {
         await loggingService.LogAsync("Getting all categories");
-        return await context.Categories.Where(c => c.DeletedAt == null).ToListAsync();
+        return await context.Categories.Where(c => c.DeletedAt == null)
+            .Include(c => c.SubCategories).Include(c => c.Products).ToListAsync();
     }
 
     public async Task<Category?> UpdateAsync(Category category)

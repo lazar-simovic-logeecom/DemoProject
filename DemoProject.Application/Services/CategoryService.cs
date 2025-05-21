@@ -11,13 +11,13 @@ namespace DemoProject.Application.Services
             return await categoryRepository.GetAllAsync();
         }
 
-        public async Task<Category?> GetByIdAsync(Guid id)
+        public async Task<Category?> GetByIdAsync(Guid? id)
         {
             Category? category = await categoryRepository.GetByIdAsync(id);
 
             if (category == null)
             {
-                throw new CategoryNotFoundException($"Category with ID {id} not found.");
+                throw new ModelNotFoundException($"Category with ID {id} not found.");
             }
 
             return category;
@@ -27,12 +27,12 @@ namespace DemoProject.Application.Services
         {
             if (await categoryRepository.GetCategoryByTitleAsync(category.Title) != null)
             {
-                throw new CategoryAlreadyExistsException("Category with the same Title already exists.");
+                throw new ModelAlreadyExistsException("Category with the same Title already exists.");
             }
 
             if (await categoryRepository.GetCategoryByCodeAsync(category.Code) != null)
             {
-                throw new CategoryAlreadyExistsException("Category with the same Code already exists.");
+                throw new ModelAlreadyExistsException("Category with the same Code already exists.");
             }
 
             if (category.ParentCategory.HasValue)
@@ -45,7 +45,7 @@ namespace DemoProject.Application.Services
                 Category? parent = await categoryRepository.GetByIdAsync(category.ParentCategory.Value);
                 if (parent == null)
                 {
-                    throw new CategoryNotFoundException("Parent category not found.");
+                    throw new ModelNotFoundException("Parent category not found.");
                 }
 
                 parent.SubCategories.Add(category);
@@ -61,7 +61,7 @@ namespace DemoProject.Application.Services
             Category? existingCategory = await categoryRepository.GetByIdAsync(updatedCategory.Id);
             if (existingCategory == null)
             {
-                throw new CategoryNotFoundException($"Category with ID {updatedCategory.Id} not found.");
+                throw new ModelNotFoundException($"Category with ID {updatedCategory.Id} not found.");
             }
 
             if (updatedCategory.ParentCategory == updatedCategory.Id)
@@ -106,7 +106,7 @@ namespace DemoProject.Application.Services
             Category? existingCategory = await categoryRepository.GetByIdAsync(id);
             if (existingCategory == null)
             {
-                throw new CategoryNotFoundException($"Category with ID {id} not found.");
+                throw new ModelNotFoundException($"Category with ID {id} not found.");
             }
 
             if (existingCategory.SubCategories.Any())
