@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DemoProject.Migrations.Migrations;
 
-[Migration(4,"Delete New Column")]
+[Migration(3,"Delete New Column")]
 public class DeleteNewColumn : Migration
 {
     public override void Up()

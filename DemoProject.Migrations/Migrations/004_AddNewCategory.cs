@@ -2,7 +2,7 @@ using FluentMigrator;
 
 namespace DemoProject.Migrations.Migrations;
 
-[Migration(3, "Add New Category")]
+[Migration(4, "Add New Category")]
 public class AddNewCategory : ForwardOnlyMigration
 {
     public override void Up()

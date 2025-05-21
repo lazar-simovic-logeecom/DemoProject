@@ -15,5 +15,8 @@ public class AutoMapperProfile : Profile
         CreateMap<UserDto, User>()
             .ForMember(dest => dest.Id, opt => opt.Ignore())
             .ForMember(dest => dest.Token, opt => opt.Ignore());
+        CreateMap<ProductDto, Product>()
+            .ForMember(dest => dest.Id, opt => opt.Ignore())
+            .ForMember(dest => dest.GetTime, opt => opt.Ignore());
     }
 }
