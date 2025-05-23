@@ -54,6 +54,10 @@ namespace DemoProject.Controllers
             {
                 return NotFound(new { message = ex.Message });
             }
+            catch (CategoryHasBeenDeletedException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
         }
 
         [HttpPut("{id}")]

@@ -19,6 +19,10 @@ namespace DemoProject.Application.Services
             {
                 throw new ModelNotFoundException($"Category with ID {id} not found.");
             }
+            if (category.DeletedAt.HasValue)
+            {
+                throw new CategoryHasBeenDeletedException("Category with ID " + category.Id + " has been deleted."); 
+            }
 
             return category;
         }
