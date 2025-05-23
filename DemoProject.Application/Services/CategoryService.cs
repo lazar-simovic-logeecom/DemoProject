@@ -78,12 +78,12 @@ namespace DemoProject.Application.Services
                 throw new CategoryHasBeenDeletedException("Category with ID " + updatedCategory.Id + " has been deleted."); 
             }
             
-            if (await categoryRepository.GetCategoryByTitleAsync(updatedCategory.Title) != null)
+            if (existingCategory.Title != updatedCategory.Title && await categoryRepository.GetCategoryByTitleAsync(updatedCategory.Title) != null)
             {
                 throw new ModelAlreadyExistsException("Category with the same Title already exists.");
             }
 
-            if (await categoryRepository.GetCategoryByCodeAsync(updatedCategory.Code) != null)
+            if (existingCategory.Code != updatedCategory.Code && await categoryRepository.GetCategoryByCodeAsync(updatedCategory.Code) != null)
             {
                 throw new ModelAlreadyExistsException("Category with the same Code already exists.");
             }

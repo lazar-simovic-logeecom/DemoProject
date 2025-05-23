@@ -61,12 +61,12 @@ public class ProductService(IProductRepository productRepository, ICategoryRepos
             throw new ModelNotFoundException("Product not found");
         }
 
-        if (await productRepository.GetProductByTitleAsync(product.Title) != null)
+        if (product.Title != productToUpdate.Title && await productRepository.GetProductByTitleAsync(product.Title) != null)
         {
             throw new ModelAlreadyExistsException("Product with the same Title already exists.");
         }
 
-        if (await productRepository.GetProductBySkuAsync(product.Sku) != null)
+        if (product.Sku != productToUpdate.Sku && await productRepository.GetProductBySkuAsync(product.Sku) != null)
         {
             throw new ModelAlreadyExistsException("Category with the same Sku already exists.");
         }
