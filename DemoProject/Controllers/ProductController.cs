@@ -82,6 +82,10 @@ public class ProductController(IProductService productService, IMapper mapper)
         {
             return NotFound(new { message = ex.Message });
         }
+        catch (ModelAlreadyExistsException ex)
+        {
+            return BadRequest(new { message = ex.Message });
+        }
     }
 
     [HttpDelete("{id}")]

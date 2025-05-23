@@ -76,6 +76,10 @@ namespace DemoProject.Controllers
             {
                 return NotFound(new { message = ex.Message });
             }
+            catch (ModelAlreadyExistsException ex)
+            {
+                return NotFound(new { message = ex.Message });
+            }
             catch (InvalidParentCategoryException ex)
             {
                 return BadRequest(new { message = ex.Message });

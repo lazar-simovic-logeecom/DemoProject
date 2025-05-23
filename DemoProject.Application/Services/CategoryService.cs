@@ -74,6 +74,16 @@ namespace DemoProject.Application.Services
                 throw new CategoryHasBeenDeletedException("Category with ID " + updatedCategory.Id + " has been deleted."); 
             }
             
+            if (await categoryRepository.GetCategoryByTitleAsync(updatedCategory.Title) != null)
+            {
+                throw new ModelAlreadyExistsException("Category with the same Title already exists.");
+            }
+
+            if (await categoryRepository.GetCategoryByCodeAsync(updatedCategory.Code) != null)
+            {
+                throw new ModelAlreadyExistsException("Category with the same Code already exists.");
+            }
+            
             existingCategory.Update(updatedCategory);
 
             if (existingCategory.ParentCategory != updatedCategory.ParentCategory)
@@ -109,11 +119,21 @@ namespace DemoProject.Application.Services
                 throw new ModelNotFoundException($"Category with ID {id} not found.");
             }
 
+            if (existingCategory.DeletedAt.HasValue)
+            {
+                throw new CategoryHasBeenDeletedException("Category with ID " + existingCategory.Id + " has been deleted."); 
+            }
+            
             if (existingCategory.SubCategories.Any())
             {
                 throw new CategoryHasSubCategoriesException("Cannot delete category with subcategories.");
             }
-
+            
+            if (existingCategory.Products.Any())
+            {
+                throw new CategoryHasSubCategoriesException("Cannot delete category with products list.");
+            }
+            
             if (existingCategory.ParentCategory.HasValue)
             {
                 Category? oldParent = await categoryRepository.GetByIdAsync(existingCategory.ParentCategory.Value);

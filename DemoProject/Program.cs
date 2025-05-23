@@ -65,7 +65,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 var app = builder.Build();
 
 //app.UseMiddleware<BasicAuthMiddleware>();
-app.UseMiddleware<JwtAuthMiddleware>();
+//app.UseMiddleware<JwtAuthMiddleware>();
 
 app.UseHttpsRedirection();
 app.MapControllers();
